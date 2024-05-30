@@ -1,7 +1,7 @@
 import {View, Text, Modal, StyleSheet} from 'react-native';
 import React from 'react';
 import {ActivityIndicator} from 'react-native-paper';
-import {Color} from '../../../Theme';
+import {Color} from '../../../theme';
 
 const Loader = ({isLoading}) => {
   return (

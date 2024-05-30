@@ -53,7 +53,7 @@ import Toast, {
   InfoToast,
 } from 'react-native-toast-message';
 
-import {Color} from '../../../Theme';
+import {Color} from '../../../theme';
 
 export const toastConfig = {
   success: ({text1Style, text2Style, ...props}) => (

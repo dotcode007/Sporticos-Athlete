@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import SplashScreen from 'react-native-splash-screen';
-import Main from './src/Navigation/Main';
+import Main from './src/navigation/Main';
 import {PaperProvider} from 'react-native-paper';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {Provider} from 'react-redux';
