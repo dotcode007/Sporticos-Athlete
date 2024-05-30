@@ -6,7 +6,6 @@ import {
   View,
 } from "react-native";
 import React from "react";
-import { colors } from "../utils/colors";
 
 import { Color, FontFamily } from "../theme";
 
@@ -42,13 +41,13 @@ const CustomButton = ({
         borderWidth: borderWidth || 1,
         borderColor: disabled ? "red" : borderColor || Color.primary,
         width: width || "100%",
-        height: height || 55,
+        height: height || 56,
         alignSelf: alignSelf,
         marginRight: marginRight,
         marginTop: marginTop,
         marginLeft: marginLeft,
         marginBottom: marginBottom,
-        borderRadius: borderRadius || 55,
+        borderRadius: borderRadius || 5,
         justifyContent: "center",
         alignItems: "center",
       }}
@@ -65,7 +64,7 @@ const CustomButton = ({
           <Text
             style={{
               fontSize: fontSize || 17,
-              color: color || disabled ? colors?.black : colors.white,
+              color: color || Color?.yellowPrim,
               fontWeight: fontWeight,
               fontFamily: FontFamily.barlowBold || fontFamily,
             }}

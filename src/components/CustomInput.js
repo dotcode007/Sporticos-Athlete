@@ -1,9 +1,11 @@
-import {View, StyleSheet, TextInput, Text, Keyboard} from 'react-native';
-import React, {useRef, useState} from 'react';
-import {Color, FontFamily} from '../Theme';
-import {GeneralStyle} from '../constants/GenralStyle';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import {getFontSize} from '../assets/utils/ResponsiveFn';
+import { View, StyleSheet, TextInput, Text, Keyboard } from "react-native";
+import React, { useRef, useState } from "react";
+
+import { GeneralStyle } from "../constants/GenralStyle";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import { getFontSize } from "../assets/utils/ResponsiveFn";
+import { Color, FontFamily } from "../theme";
+import CustomText from "./CustomText";
 
 const CustomInput = ({
   placeholder,
@@ -31,39 +33,46 @@ const CustomInput = ({
   onBlur,
   textContentType,
   blurOnSubmit,
+  HeaderLabel,
 }) => {
   const [hidePass, setHidePass] = useState(secureTextEntry);
   return (
-    <View style={{marginBottom: 17}}>
+    <View style={{ marginBottom: 17 }}>
+      <CustomText
+        label={HeaderLabel}
+        marginBottom={5}
+        fontSize={16}
+        fontFamily={FontFamily.barlowMedium}
+      />
       <View
         style={[
           styles.inputContainer,
           {
-            width: width || '100%',
-            borderWidth: errorMessage ? 1 : 0,
-            borderColor: errorMessage ? Color.error : null,
+            width: width || "100%",
+            borderWidth: 1,
+            borderColor: errorMessage ? Color.error : Color?.greyLight10,
           },
-        ]}>
+        ]}
+      >
         <TextInput
           ref={inputRef}
           style={[
             GeneralStyle.regularText,
             {
               flex: 1,
-              height: '100%',
-              backgroundColor: Color.inputBackGroundColor,
+              height: "100%",
               borderRadius: 12,
               paddingVertical: 5,
-              paddingHorizontal: inputPaddingHorizontal || 0,
-              fontSize: 12,
-              color: Color.blackTextColor,
+              paddingHorizontal: inputPaddingHorizontal || 20,
+              fontSize: 14,
+              color: Color.darkGrey,
               fontFamily: FontFamily.poppinsRegular,
             },
           ]}
           editable={editable}
           placeholder={placeholder}
           textContentType={textContentType}
-          placeholderTextColor={placeholderTextColor || Color.grayTextColor}
+          placeholderTextColor={placeholderTextColor || Color.darkGrey}
           value={value}
           selectionColor={Color.pink}
           onChangeText={onChangeText}
@@ -80,17 +89,17 @@ const CustomInput = ({
         />
         {secureTextEntry ? (
           <MaterialCommunityIcons
-            name={hidePass ? 'eye-off-outline' : 'eye-outline'}
+            name={hidePass ? "eye-off-outline" : "eye-outline"}
             size={getFontSize(3)}
-            color={iconColor || Color.pink}
+            color={iconColor || Color.black}
             style={styles.icon}
             onPress={() => setHidePass(!hidePass)}
           />
         ) : iconName ? (
           <MaterialCommunityIcons
-            name={'email-outline'}
+            name={"check"}
             size={getFontSize(3)}
-            color={iconColor || Color.pink}
+            color={iconColor || Color.black}
             style={styles.icon}
           />
         ) : null}
@@ -115,11 +124,11 @@ export default CustomInput;
 
 const styles = StyleSheet.create({
   inputContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: Color.inputBackGroundColor,
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: Color.white10,
     marginBottom: 2,
-    height: 60,
+    height: 58,
     borderRadius: 12,
   },
   icon: {
@@ -128,6 +137,6 @@ const styles = StyleSheet.create({
   errorMessage: {
     marginLeft: 10,
     fontSize: 12,
-    color: 'red',
+    color: "red",
   },
 });

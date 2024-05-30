@@ -4,6 +4,8 @@ export const images = {
   slide2: require("../assets/images/slide2.jpg"),
   slide3: require("../assets/images/slide2.jpg"),
   Logo: require("../assets/images/logo.png"),
+  faceBook: require("../assets/images/Facebook.png"),
+  Google: require("../assets/images/Google.png"),
 };
 
 //Svgs
@@ -17,9 +19,14 @@ export const FontFamily = {
 // colos
 export const Color = {
   white: "#FFFFFF",
+  white10: "#F5F5F5",
   black: "#000000",
+  black10: "#191919",
   primary: "#212A38",
   yellowPrim: "#D9E76C",
+  greyLight: "#212A3880",
+  greyLight10: "#69696940",
+  darkGrey: "#303841",
 };
 export const FontSize = {
   size_xs: 12,

@@ -1,6 +1,6 @@
-import {Text, TouchableOpacity} from 'react-native';
-import React from 'react';
-import {Color, FontFamily} from '../theme';
+import { Text, TouchableOpacity } from "react-native";
+import React from "react";
+import { Color, FontFamily } from "../theme";
 
 const CustomText = ({
   color,
@@ -25,12 +25,14 @@ const CustomText = ({
     <TouchableOpacity
       onPress={onPress}
       disabled={!onPress}
-      style={{paddingHorizontal: paddingHorizontal}}>
+      activeOpacity={0.8}
+      style={{ paddingHorizontal: paddingHorizontal }}
+    >
       <Text
         style={[
           textStyle,
           {
-            color: color || Color.white,
+            color: color || Color.black,
             fontSize: fontSize || 12,
             lineHeight: lineHeight,
             fontFamily: fontFamily || FontFamily.barlowRegular,
@@ -44,7 +46,8 @@ const CustomText = ({
             width: width,
           },
         ]}
-        numberOfLines={numberOfLines}>
+        numberOfLines={numberOfLines}
+      >
         {label}
       </Text>
     </TouchableOpacity>
