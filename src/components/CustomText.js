@@ -1,6 +1,6 @@
 import {Text, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {Color, FontFamily} from '../Theme';
+import {Color, FontFamily} from '../theme';
 
 const CustomText = ({
   color,
@@ -30,10 +30,10 @@ const CustomText = ({
         style={[
           textStyle,
           {
-            color: color || Color.black,
+            color: color || Color.white,
             fontSize: fontSize || 12,
             lineHeight: lineHeight,
-            fontFamily: fontFamily || FontFamily.poppinsRegular,
+            fontFamily: fontFamily || FontFamily.barlowRegular,
             marginTop: marginTop,
             marginBottom: marginBottom,
             marginLeft: marginLeft,
