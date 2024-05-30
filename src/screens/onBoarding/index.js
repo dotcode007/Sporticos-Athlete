@@ -11,7 +11,8 @@ import {
   Animated,
 } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
-import { Color, images } from "../../theme";
+import { Color, FontFamily, images } from "../../theme";
+import CustomText from "../../components/CustomText";
 
 const { width, height } = Dimensions.get("window");
 
@@ -43,11 +44,35 @@ const Slide = ({ item }) => (
   <View style={styles.slide}>
     <Image source={item.image} style={styles.image} />
     <LinearGradient
-      colors={["rgba(0,0,0,0.6)", "rgba(0,0,0,0.3)", "rgba(0,0,0,0.6)"]}
+      colors={[
+        "rgba(33, 42, 56, 0)",
+        "rgba(33, 42, 56, 0.5)",
+        "rgba(33, 42, 56, 1)",
+      ]}
       style={styles.overlay}
     >
-      <Text style={styles.title}>{item.title}</Text>
-      <Text style={styles.subtitle}>{item.subtitle}</Text>
+      <View
+        style={{
+          height: "80%",
+          justifyContent: "flex-end",
+        }}
+      >
+        <CustomText
+          label={"Wherever You Are Health is Number One"}
+          fontFamily={FontFamily.barlowMedium}
+          fontSize={24}
+          textAlign={"center"}
+          alignSelf={"center"}
+          width={"80%"}
+        />
+        <CustomText
+          label={item.subtitle}
+          textAlign={"center"}
+          alignSelf={"center"}
+          width={"80%"}
+          marginTop={20}
+        />
+      </View>
     </LinearGradient>
   </View>
 );
@@ -85,13 +110,21 @@ const OnboardingSlider = () => {
           return (
             <View
               key={index}
-              style={[styles.dot, { opacity: index === activeSlide ? 1 : 0.4 }]}
+              style={[
+                styles.dot,
+                {
+                  backgroundColor:
+                    index === activeSlide ? Color.yellowPrim : Color.black,
+                },
+              ]}
             />
           );
         })}
       </View>
       <TouchableOpacity style={styles.button}>
-        <Text style={styles.buttonText}>Next</Text>
+        <Text style={styles.buttonText}>
+          {activeSlide === 2 ? "Get Started" : "Next"}
+        </Text>
       </TouchableOpacity>
     </View>
   );
@@ -117,10 +150,6 @@ const styles = StyleSheet.create({
   overlay: {
     width: "100%",
     height: "100%",
-    justifyContent: "flex-end",
-    alignItems: "center",
-    paddingBottom: 100,
-    paddingHorizontal: 20,
   },
   title: {
     color: Color.white,
@@ -144,6 +173,10 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     justifyContent: "center",
     alignItems: "center",
+    position: "absolute",
+    bottom: 40,
+    width: "90%",
+    alignSelf: "center",
   },
   buttonText: {
     color: "#000",
@@ -152,16 +185,22 @@ const styles = StyleSheet.create({
   },
   pagination: {
     position: "absolute",
-    bottom: 100,
+    bottom: 130,
     flexDirection: "row",
     alignSelf: "center",
+    width: 65,
+    backgroundColor: Color.yellowPrim,
+    borderRadius: 5,
+    height: 5,
+    justifyContent: "center",
+    alignItems: "center",
   },
   dot: {
-    width: 10,
-    height: 10,
+    width: 20,
+    height: 3,
     borderRadius: 5,
-    backgroundColor: Color.yellowPrim,
-    marginHorizontal: 5,
+    // backgroundColor: Color.yellowPrim,
+    // marginHorizontal: 5,
   },
 });
 
