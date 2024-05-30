@@ -3,8 +3,6 @@ export const images = {
   slide1: require("../assets/images/slide.jpg"),
   slide2: require("../assets/images/slide2.jpg"),
   slide3: require("../assets/images/slide2.jpg"),
-
-
 };
 
 //Svgs
@@ -19,7 +17,8 @@ export const FontFamily = {
 export const Color = {
   white: "#FFFFFF",
   black: "#000000",
-  primary:"#D9E76C"
+  primary: "#212A38",
+  yellowPrim: "#D9E76C",
 };
 export const FontSize = {
   size_xs: 12,
