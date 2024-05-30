@@ -3,6 +3,7 @@ export const images = {
   slide1: require("../assets/images/slide.jpg"),
   slide2: require("../assets/images/slide2.jpg"),
   slide3: require("../assets/images/slide2.jpg"),
+  Logo: require("../assets/images/logo.png"),
 };
 
 //Svgs
