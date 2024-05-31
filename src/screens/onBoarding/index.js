@@ -62,12 +62,14 @@ const Slide = ({ item }) => (
           fontFamily={FontFamily.barlowMedium}
           fontSize={24}
           textAlign={"center"}
+          color={Color.white}
           alignSelf={"center"}
           width={"80%"}
         />
         <CustomText
           label={item.subtitle}
           textAlign={"center"}
+          color={Color.white}
           alignSelf={"center"}
           width={"80%"}
           marginTop={20}
@@ -77,7 +79,7 @@ const Slide = ({ item }) => (
   </View>
 );
 
-const OnboardingSlider = () => {
+const OnboardingSlider = ({ navigation }) => {
   const [activeSlide, setActiveSlide] = useState(0);
   const scrollX = useRef(new Animated.Value(0)).current;
 
@@ -121,7 +123,14 @@ const OnboardingSlider = () => {
           );
         })}
       </View>
-      <TouchableOpacity style={styles.button}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => {
+          if (activeSlide === 2) {
+            navigation.navigate("AuthSelction");
+          }
+        }}
+      >
         <Text style={styles.buttonText}>
           {activeSlide === 2 ? "Get Started" : "Next"}
         </Text>
