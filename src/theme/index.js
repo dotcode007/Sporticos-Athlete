@@ -6,6 +6,8 @@ export const images = {
   Logo: require("../assets/images/logo.png"),
   faceBook: require("../assets/images/Facebook.png"),
   Google: require("../assets/images/Google.png"),
+  Shape: require("../assets/images/Shape.png"),
+  Upload: require("../assets/images/Upload.png"),
 };
 
 //Svgs
@@ -22,6 +24,7 @@ export const Color = {
   white10: "#F5F5F5",
   black: "#000000",
   black10: "#191919",
+  black20: "#404040",
   primary: "#212A38",
   yellowPrim: "#D9E76C",
   greyLight: "#212A3880",

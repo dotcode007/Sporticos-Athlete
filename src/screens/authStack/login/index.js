@@ -8,7 +8,7 @@ import CustomButton from "../../../components/CustomButton";
 
 const Login = ({ navigation }) => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.parent}>
       <View style={styles.container}>
         <CustomHeader onPress={() => navigation.goBack()} />
         <Image source={images.Logo} style={styles.HeaderImage} />
@@ -33,6 +33,7 @@ const Login = ({ navigation }) => {
           fontSize={14}
           fontFamily={FontFamily?.barlowSemiBold}
           alignSelf={"flex-end"}
+          onPress={() => navigation.navigate("ForgetPassword")}
         />
         <CustomButton marginTop={15} title={"Login"} color={Color?.white} />
         <CustomText
@@ -54,20 +55,14 @@ const Login = ({ navigation }) => {
           ]}
         />
         <Image source={images.faceBook} style={styles?.SocialIcon} />
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "center",
-            marginTop: 90,
-          }}
-        >
+        <View style={styles.footer}>
           <CustomText
             label={"Don’t have an account"}
             fontSize={15}
             fontFamily={FontFamily.barlowMedium}
           />
           <CustomText
+            onPress={() => navigation.navigate("SignUp")}
             label={" Register!"}
             fontSize={15}
             fontFamily={FontFamily.barlowBold}
@@ -101,5 +96,11 @@ const styles = StyleSheet.create({
     width: 318,
     alignSelf: "center",
     resizeMode: "contain",
+  },
+  footer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 90,
   },
 });

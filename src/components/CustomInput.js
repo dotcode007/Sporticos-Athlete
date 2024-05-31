@@ -26,6 +26,7 @@ const CustomInput = ({
   inputPaddingHorizontal,
   props,
   editable,
+  paddingVertical,
   inputMode,
   inputRef,
   onSubmitEditing,
@@ -34,6 +35,8 @@ const CustomInput = ({
   textContentType,
   blurOnSubmit,
   HeaderLabel,
+  height,
+  multiline,
 }) => {
   const [hidePass, setHidePass] = useState(secureTextEntry);
   return (
@@ -51,18 +54,18 @@ const CustomInput = ({
             width: width || "100%",
             borderWidth: 1,
             borderColor: errorMessage ? Color.error : Color?.greyLight10,
+            height: height || 58,
           },
         ]}
       >
         <TextInput
           ref={inputRef}
           style={[
-            GeneralStyle.regularText,
             {
               flex: 1,
               height: "100%",
               borderRadius: 12,
-              paddingVertical: 5,
+              paddingVertical: paddingVertical || 5,
               paddingHorizontal: inputPaddingHorizontal || 20,
               fontSize: 14,
               color: Color.darkGrey,
@@ -70,6 +73,7 @@ const CustomInput = ({
             },
           ]}
           editable={editable}
+          multiline={multiline}
           placeholder={placeholder}
           textContentType={textContentType}
           placeholderTextColor={placeholderTextColor || Color.darkGrey}
@@ -128,7 +132,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: Color.white10,
     marginBottom: 2,
-    height: 58,
+
     borderRadius: 12,
   },
   icon: {
