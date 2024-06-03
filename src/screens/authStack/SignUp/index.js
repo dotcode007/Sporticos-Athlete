@@ -5,14 +5,41 @@ import {
   SafeAreaView,
   ScrollView,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import CustomHeader from "../../../components/CustomHeader";
 import { Color, FontFamily, images } from "../../../theme";
 import CustomText from "../../../components/CustomText";
 import CustomInput from "../../../components/CustomInput";
 import CustomButton from "../../../components/CustomButton";
+import CustomRadioButton from "../../../components/CustomRadioButton";
+import CustomDropdownPicker from "../../../components/CustomDropdown";
+import CustomDate from "../../../components/CustomDate";
+import DatePicker from "react-native-date-picker";
+import moment from "moment";
 
 const SignUp = ({ navigation }) => {
+  const [selectedValue, setSelectedValue] = useState(null);
+  const [date, setDate] = useState(null);
+
+  const [show, setShow] = useState(false);
+  console.log("show", show);
+  const onChange = (event, selectedDate) => {
+    const currentDate = selectedDate || date;
+    setDate(currentDate);
+  };
+
+  const genderData = [
+    {
+      id: 0,
+      label: "Male",
+      value: "Male",
+    },
+    {
+      id: 1,
+      label: "Female",
+      value: "Female",
+    },
+  ];
   return (
     <SafeAreaView style={styles.parent}>
       <View style={styles.container}>
@@ -27,6 +54,17 @@ const SignUp = ({ navigation }) => {
           />
           <CustomInput placeholder={"John"} HeaderLabel={"First Name"} />
           <CustomInput placeholder={"Welles"} HeaderLabel={"Last Name"} />
+          <CustomDropdownPicker
+            HeaderLabel={"Gender"}
+            data={genderData}
+            label={"Male"}
+            value={selectedValue}
+            setValue={setSelectedValue}
+          />
+          <CustomDate
+            label={date ? moment(date).format("DD/MM/YYYY") : "DD/MM/YYYY"}
+            onPress={() => setShow(true)}
+          />
           <CustomInput
             placeholder={"+44 3224095946"}
             HeaderLabel={"Phone Number"}
@@ -48,6 +86,7 @@ const SignUp = ({ navigation }) => {
               marginBottom: 15,
             }}
           >
+            <CustomRadioButton />
             <CustomText
               label={
                 "I Have read the private policy and Terms of Use, I Agree to it"
@@ -99,6 +138,19 @@ const SignUp = ({ navigation }) => {
           <View style={{ marginBottom: 150 }} />
         </ScrollView>
       </View>
+
+      <DatePicker
+        modal
+        open={show}
+        date={date || new Date()}
+        onConfirm={(date) => {
+          setShow(false);
+          setDate(date);
+        }}
+        onCancel={() => {
+          setShow(false);
+        }}
+      />
     </SafeAreaView>
   );
 };

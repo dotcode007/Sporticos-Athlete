@@ -7,6 +7,8 @@ import SignUp from "../../screens/authStack/SignUp";
 import ForgetPassword from "../../screens/authStack/ForgetPassword";
 import Otp from "../../screens/authStack/Otp";
 import ProfilePhoto from "../../screens/authStack/ProfilePhoto";
+import SubscriptionPlan from "../../screens/authStack/SubscriptionPlan";
+import ChatScreen from "../../screens/mainStack/ChatScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +26,8 @@ const AuthStack = () => {
       <Stack.Screen name="ForgetPassword" component={ForgetPassword} />
       <Stack.Screen name="Otp" component={Otp} />
       <Stack.Screen name="ProfilePhoto" component={ProfilePhoto} />
+      <Stack.Screen name="SubscriptionPlan" component={SubscriptionPlan} />
+      <Stack.Screen name="ChatScreen" component={ChatScreen} />
     </Stack.Navigator>
   );
 };

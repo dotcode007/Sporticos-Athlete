@@ -1,54 +1,33 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React, {useState} from 'react';
-import {Color, FontFamily, FontSize} from '../Theme';
-import CustomModal from './CustomModal';
-import CustomText from './CustomText';
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import React, { useState } from "react";
+import CustomModal from "./CustomModal";
+import CustomText from "./CustomText";
+import { Color } from "../theme";
 
-const CustomRadioButton = ({
-  onPress,
-  borderColor,
-  width,
-  backgroundColor,
-  dayName,
-  marginLeft,
-}) => {
-  const [calendarModal, setCalendarModal] = useState('');
+const CustomRadioButton = ({ onPress, borderColor }) => {
   return (
-    <View style={[styles.maincontainer, {width: width}]}>
-      <TouchableOpacity
-        onPress={onPress}
-        style={[styles.mainButtonContainer, {borderColor: borderColor}]}>
-        <View
-          style={[styles.container, {backgroundColor: backgroundColor}]}></View>
-      </TouchableOpacity>
-      <View>
-        <CustomText
-          label={dayName}
-          fontFamily={FontFamily.poppinsRegular}
-          fontSize={FontSize.size_xs}
-          color={Color.black20}
-          marginLeft={8}
-        />
-      </View>
-    </View>
+    <TouchableOpacity
+      onPress={onPress}
+      style={[
+        styles.mainButtonContainer,
+        { borderColor: borderColor || Color?.greyLight10 },
+      ]}
+    ></TouchableOpacity>
   );
 };
 
 export default CustomRadioButton;
 
 const styles = StyleSheet.create({
-  maincontainer: {
-    flexDirection: 'row',
-    marginTop: 10,
-    alignItems: 'center',
-  },
   mainButtonContainer: {
     width: 20,
     height: 20,
-    borderRadius: 20,
+    borderRadius: 1,
     borderWidth: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: 8,
+    backgroundColor: Color?.white10,
   },
   container: {
     width: 10,

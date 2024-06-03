@@ -1,12 +1,21 @@
-import { StyleSheet, Text, View, SafeAreaView, Image } from "react-native";
-import React from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  SafeAreaView,
+  Image,
+  TouchableOpacity,
+} from "react-native";
+import React, { useState } from "react";
 import { Color, FontFamily, images } from "../../../theme";
 import CustomText from "../../../components/CustomText";
 import CustomHeader from "../../../components/CustomHeader";
 import CustomInput from "../../../components/CustomInput";
 import CustomButton from "../../../components/CustomButton";
+import UploadPhoto from "../../../components/UploadPhoto";
 
 const ProfilePhoto = ({ navigation }) => {
+  const [imageModal, setImageModal] = useState(false);
   return (
     <SafeAreaView style={styles.parent}>
       <View style={styles.container}>
@@ -39,9 +48,13 @@ const ProfilePhoto = ({ navigation }) => {
           }}
         >
           <Image source={images.Shape} style={styles.person} />
-          <View style={styles.upload}>
+          <TouchableOpacity
+            style={styles.upload}
+            activeOpacity={0.8}
+            onPress={() => setImageModal(true)}
+          >
             <Image source={images.Upload} style={styles.uploadIcon} />
-          </View>
+          </TouchableOpacity>
         </View>
         <CustomInput placeholder={"Write a short bio"} HeaderLabel={"Bio"} />
         <CustomInput
@@ -50,7 +63,12 @@ const ProfilePhoto = ({ navigation }) => {
           height={110}
           multiline={true}
         />
-        <CustomButton marginTop={20} title={"Done"} color={Color?.white} />
+        <CustomButton
+          marginTop={20}
+          title={"Done"}
+          color={Color?.white}
+          onPress={() => navigation.navigate("SubscriptionPlan")}
+        />
         <CustomText
           label={"Skip this step"}
           textAlign={"center"}
@@ -62,6 +80,7 @@ const ProfilePhoto = ({ navigation }) => {
           textDecorationLine={"underline"}
         />
       </View>
+      <UploadPhoto visible={imageModal} setImageModal={setImageModal} />
     </SafeAreaView>
   );
 };

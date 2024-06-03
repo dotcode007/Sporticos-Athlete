@@ -8,6 +8,9 @@ export const images = {
   Google: require("../assets/images/Google.png"),
   Shape: require("../assets/images/Shape.png"),
   Upload: require("../assets/images/Upload.png"),
+  Check: require("../assets/images/check.png"),
+  Verified: require("../assets/images/Verified.png"),
+  girl: require("../assets/images/girlImage.png"),
 };
 
 //Svgs
@@ -27,9 +30,13 @@ export const Color = {
   black20: "#404040",
   primary: "#212A38",
   yellowPrim: "#D9E76C",
+  yellowPrim20: "#B0C929",
   greyLight: "#212A3880",
   greyLight10: "#69696940",
   darkGrey: "#303841",
+  Grey10: "#6B7280",
+  grey20: "#8EA0AB",
+  borderColor: "#CFE1ED",
 };
 export const FontSize = {
   size_xs: 12,

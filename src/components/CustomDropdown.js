@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 import {
   View,
   TouchableOpacity,
@@ -6,12 +6,11 @@ import {
   StyleSheet,
   ScrollView,
   UIManager,
-} from 'react-native';
+} from "react-native";
 
-import CustomText from './CustomText';
-import Icon from 'react-native-vector-icons/AntDesign';
-
-import {Color, FontFamily} from '../Theme';
+import CustomText from "./CustomText";
+import Icon from "react-native-vector-icons/AntDesign";
+import { Color, FontFamily } from "../theme";
 
 UIManager.setLayoutAnimationEnabledExperimental &&
   UIManager.setLayoutAnimationEnabledExperimental(true);
@@ -29,10 +28,11 @@ const CustomDropdownPicker = ({
   setOpen,
   dropdownMainStyle,
   insideContentStyle,
+  HeaderLabel,
 }) => {
   const [isOpen, setIsOpen] = useState(open);
   const [select, setSelect] = useState();
-  console.log('select', select);
+  console.log("select", select);
   // useEffect(() => {
   //   setTimeout(() => {
   //     setSelect(value);
@@ -45,7 +45,7 @@ const CustomDropdownPicker = ({
     setOpen?.(!open);
   };
 
-  const selectOption = option => {
+  const selectOption = (option) => {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
     setValue(option?.value);
     setSelect(option?.label);
@@ -56,23 +56,31 @@ const CustomDropdownPicker = ({
   return (
     <>
       <View style={[styles.dropdownMainContainer, dropdownMainStyle]}>
+        <CustomText
+          label={HeaderLabel}
+          marginBottom={5}
+          fontSize={16}
+          fontFamily={FontFamily.barlowMedium}
+        />
         <TouchableOpacity
           disabled={disabled}
           activeOpacity={0.6}
           style={[
             insideContentStyle,
             {
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "space-between",
               paddingHorizontal: 20,
-              height: 55,
-              backgroundColor: Color.inputBackGroundColor,
+              height: 58,
+              backgroundColor: Color.white10,
               borderRadius: 10,
+              borderWidth: 1,
+              borderColor: Color?.greyLight10,
             },
           ]}
-          onPress={toggleDropdown}>
-          {console.log('select', select)}
+          onPress={toggleDropdown}
+        >
           <CustomText
             label={
               select?.length == 0 || select?.length == undefined
@@ -80,7 +88,7 @@ const CustomDropdownPicker = ({
                 : select
             }
             fontSize={16}
-            fontFamily={FontFamily.poppinsRegular}
+            fontFamily={FontFamily.barlowRegular}
             color={
               select?.length == 0 || select?.length == undefined
                 ? Color.black10
@@ -88,19 +96,24 @@ const CustomDropdownPicker = ({
             }
           />
 
-          <Icon name={isOpen ? 'up' : 'down'} size={18} color={Color.black10} />
+          <Icon
+            name={isOpen ? "caretup" : "caretdown"}
+            size={14}
+            color={Color.black10}
+          />
         </TouchableOpacity>
         {isOpen && data?.length > 0 && (
           <ScrollView
             style={{
-              borderColor: Color.pink,
+              borderColor: Color.greyLight10,
               borderRadius: 5,
               borderWidth: 0.5,
               paddingHorizontal: 20,
+              backgroundColor: Color?.white10,
             }}
-            showsVerticalScrollIndicator={false}>
+            showsVerticalScrollIndicator={false}
+          >
             {data?.map((option, i) => {
-              console.log('option.label', option.label);
               return (
                 <TouchableOpacity key={i} onPress={() => selectOption(option)}>
                   <CustomText
@@ -109,7 +122,7 @@ const CustomDropdownPicker = ({
                     marginTop={5}
                     marginBottom={data?.length - 1 == i ? 10 : 0}
                     color={Color.black}
-                    fontFamily={FontFamily.poppinsMedium}
+                    fontFamily={FontFamily.barlowMedium}
                   />
                 </TouchableOpacity>
               );
@@ -124,12 +137,13 @@ const CustomDropdownPicker = ({
               setOpen?.(false);
               emptyLabelPress?.();
             }}
-            style={styles.emptyContainer}>
+            style={styles.emptyContainer}
+          >
             <CustomText
-              label={emptyLabel || 'No Data'}
+              label={emptyLabel || "No Data"}
               color={Color.black}
               fontSize={14}
-              fontFamily={FontFamily.poppinsBold}
+              fontFamily={FontFamily.barlowBold}
             />
           </TouchableOpacity>
         )}
@@ -147,15 +161,14 @@ const styles = StyleSheet.create({
     borderWidth: 0,
     // width: '100%',
     // maxHeight: heightDP(150),
-    marginBottom: 10,
+    marginBottom: 17,
   },
   emptyContainer: {
-    width: '100%',
+    width: "100%",
     height: 40,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderTopColor: Color.lightBlack,
+    alignItems: "center",
+    justifyContent: "center",
+    borderTopColor: Color.greyLight10,
     borderTopWidth: 1,
   },
 });
-

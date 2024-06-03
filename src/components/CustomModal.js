@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Text,
   View,
@@ -6,8 +6,8 @@ import {
   TouchableOpacity,
   StyleSheet,
   Dimensions,
-} from 'react-native';
-import { Color } from '../Theme';
+} from "react-native";
+import { Color } from "../theme";
 
 const CustomModal = ({
   visible,
@@ -16,9 +16,9 @@ const CustomModal = ({
   children,
   btnText,
   onBtnPress,
-  marginTop
+  marginTop,
 }) => {
-  const screenwidth = Dimensions.get('window').width;
+  const screenwidth = Dimensions.get("window").width;
   return (
     <Modal
       animationType="slide"
@@ -28,17 +28,14 @@ const CustomModal = ({
     >
       <View style={styles.centeredView}>
         <View style={styles.modalView}>
-          <TouchableOpacity
-            style={styles.crossContainer}
-            onPress={onClose}
-          >
+          <TouchableOpacity style={styles.crossContainer} onPress={onClose}>
             <Text>X</Text>
           </TouchableOpacity>
           {title && <Text style={styles.title}>{title}</Text>}
           {children}
           {btnText && (
             <TouchableOpacity
-              style={[styles.btnContainer,{marginTop: marginTop||58,}]}
+              style={[styles.btnContainer, { marginTop: marginTop || 58 }]}
               onPress={onBtnPress}
             >
               <Text style={styles.btnText}>{btnText}</Text>
@@ -54,42 +51,40 @@ const styles = StyleSheet.create({
   centeredView: {
     flex: 1,
     justifyContent: "flex-end",
-  
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
   modalView: {
-    backgroundColor: 'white',
+    backgroundColor: "white",
     borderRadius: 37,
     padding: 20,
-    alignItems: 'center',
+    alignItems: "center",
   },
   crossContainer: {
-    
-    position: 'absolute',
+    position: "absolute",
     top: 10,
     right: 10,
   },
   title: {
-    fontWeight: 'bold',
+    fontWeight: "bold",
     fontSize: 16,
     marginBottom: 10,
   },
   btnContainer: {
- 
     paddingVertical: 10,
     paddingHorizontal: 20,
-    backgroundColor:Color.pink,
-    borderRadius:12,
-    height:57,
-    width:300,
-    justifyContent:"center",
-    alignItems:"center",
-    marginBottom:25
+    backgroundColor: Color.pink,
+    borderRadius: 12,
+    height: 57,
+    width: 300,
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 25,
   },
   btnText: {
-    color: 'white',
-    fontWeight: 'bold',
-    },
+    color: "white",
+    fontWeight: "bold",
+  },
 });
 
 export default CustomModal;
