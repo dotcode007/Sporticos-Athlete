@@ -9,6 +9,7 @@ import Otp from "../../screens/authStack/Otp";
 import ProfilePhoto from "../../screens/authStack/ProfilePhoto";
 import SubscriptionPlan from "../../screens/authStack/SubscriptionPlan";
 import ChatScreen from "../../screens/mainStack/ChatScreen";
+import ChatDetailsScreen from "../../screens/mainStack/MessageDetailsScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,8 @@ const AuthStack = () => {
       <Stack.Screen name="ProfilePhoto" component={ProfilePhoto} />
       <Stack.Screen name="SubscriptionPlan" component={SubscriptionPlan} />
       <Stack.Screen name="ChatScreen" component={ChatScreen} />
+      <Stack.Screen name="ChatDetails" component={ChatDetailsScreen} />
+
     </Stack.Navigator>
   );
 };

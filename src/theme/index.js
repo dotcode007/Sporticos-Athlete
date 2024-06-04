@@ -12,7 +12,11 @@ export const images = {
   Verified: require("../assets/images/Verified.png"),
   girl: require("../assets/images/girlImage.png"),
 };
-
+//icons
+export const icons = {
+  send: require("../assets/icons/send.png"),
+  attachment: require("../assets/icons/attach.png")
+};
 //Svgs
 
 export const FontFamily = {
@@ -37,6 +41,7 @@ export const Color = {
   Grey10: "#6B7280",
   grey20: "#8EA0AB",
   borderColor: "#CFE1ED",
+  messageBodyColor: "#F3F7F9",
 };
 export const FontSize = {
   size_xs: 12,

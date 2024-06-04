@@ -1,12 +1,14 @@
-import { StyleSheet, Image, View } from "react-native";
+import { StyleSheet, Image, View, TouchableOpacity } from "react-native";
 import React from "react";
 import { Color, FontFamily, images } from "../../../../theme";
 import CustomText from "../../../../components/CustomText";
 import Icons from "../../../../components/Icons";
+import { useNavigation } from "@react-navigation/native";
 
 const ChatRow = () => {
+  const navigation = useNavigation()
   return (
-    <View style={styles?.parent}>
+    <TouchableOpacity style={styles?.parent} onPress={()=> navigation.navigate("ChatDetails")}>
       <View style={{ flexDirection: "row", alignItems: "center" }}>
         <Image
           source={images.girl}
@@ -37,7 +39,7 @@ const ChatRow = () => {
         size={18}
         color={Color?.grey20}
       />
-    </View>
+    </TouchableOpacity>
   );
 };
 
