@@ -10,6 +10,7 @@ import ProfilePhoto from "../../screens/authStack/ProfilePhoto";
 import SubscriptionPlan from "../../screens/authStack/SubscriptionPlan";
 import ChatScreen from "../../screens/mainStack/ChatScreen";
 import ChatDetailsScreen from "../../screens/mainStack/MessageDetailsScreen";
+import DrawerNavigator from "../drawer";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +18,7 @@ const AuthStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{ headerShown: false }}
-      initialRouteName="OnBoarding"
+      initialRouteName="Drawer"
     >
       <Stack.Screen name="AuthSelction" component={AuthSelction} />
 
@@ -30,7 +31,7 @@ const AuthStack = () => {
       <Stack.Screen name="SubscriptionPlan" component={SubscriptionPlan} />
       <Stack.Screen name="ChatScreen" component={ChatScreen} />
       <Stack.Screen name="ChatDetails" component={ChatDetailsScreen} />
-
+      <Stack.Screen name="Drawer" component={DrawerNavigator}/>
     </Stack.Navigator>
   );
 };

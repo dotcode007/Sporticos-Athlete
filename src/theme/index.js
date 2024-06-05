@@ -16,7 +16,12 @@ export const images = {
 export const icons = {
   send: require("../assets/icons/send.png"),
   attachment: require("../assets/icons/attach.png"),
-  doubleTick: require('../assets/icons/doubleTick.png')
+  doubleTick: require("../assets/icons/doubleTick.png"),
+  calendar: require("../assets/icons/calendar.png"),
+  chat: require("../assets/icons/chat.png"),
+  home: require("../assets/icons/home.png"),
+  profile: require("../assets/icons/profile.png"),
+  session: require("../assets/icons/session.png"),
 };
 //Svgs
 
