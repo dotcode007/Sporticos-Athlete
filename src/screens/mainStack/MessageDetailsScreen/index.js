@@ -106,7 +106,10 @@ const ChatDetailsScreen = ({ navigation }) => {
             <Image source={icons.attachment} style={styles.sendIcon} />
           </View>
 
-          <TouchableOpacity style={styles.sendButton}>
+          <TouchableOpacity
+            style={styles.sendButton}
+            onPress={() => navigation.navigate("Drawer")}
+          >
             <Image source={icons.send} style={styles.sendIcon} />
           </TouchableOpacity>
         </View>

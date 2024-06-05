@@ -180,6 +180,7 @@ const styles = StyleSheet.create({
   parent: {
     flex: 1,
     backgroundColor: Color.white,
+    marginTop: 40,
   },
   container: {
     paddingHorizontal: 20,

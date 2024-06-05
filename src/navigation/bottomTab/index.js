@@ -5,17 +5,12 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AntDesign from "react-native-vector-icons/AntDesign";
 import { Color, icons } from "../../theme";
 import DrawerScreenWrapper from "../../components/DrawerScreenWrapper";
+import Home from "../../screens/mainStack/Home";
 const Tab = createBottomTabNavigator();
 
 const Stack = createNativeStackNavigator();
 
-const Home = () => {
-  return (
-    <View style={{ flex: 1 , backgroundColor:""}}>
-      <Text>sdksaljdkljsakl</Text>
-    </View>
-  );
-};
+
 
 const Calendar = () => {
   return (

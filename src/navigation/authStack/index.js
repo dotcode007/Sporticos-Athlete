@@ -19,7 +19,7 @@ const AuthStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{ headerShown: false }}
-      initialRouteName="Drawer"
+      initialRouteName="OnBoarding"
     >
       <Stack.Screen name="AuthSelction" component={AuthSelction} />
 
@@ -33,7 +33,6 @@ const AuthStack = () => {
       <Stack.Screen name="ChatScreen" component={ChatScreen} />
       <Stack.Screen name="ChatDetails" component={ChatDetailsScreen} />
       <Stack.Screen name="Drawer" component={DrawerNavigator}/>
-      <Stack.Screen name="Home" component={Home} />
     </Stack.Navigator>
   );
 };
