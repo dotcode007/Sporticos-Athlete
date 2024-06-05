@@ -10,9 +10,14 @@ import MentorCard from "./molecules/MentorCard";
 import CustomInput from "../../../components/CustomInput";
 import CustomDropdownPicker from "../../../components/CustomDropdown";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const [searchVisible, setSearchVisible] = useState(true);
+  const [selectedCat, setSelectedCat] = useState(0);
   const catgeroyData = [
+    {
+      id: 8,
+      label: "All",
+    },
     {
       id: 0,
       label: "Movement",
@@ -56,7 +61,11 @@ const Home = () => {
   return (
     <SafeAreaView style={styles.parent}>
       <View style={styles.container}>
-        <Header search={true} SearchIconPress={() => setSearchVisible(false)} />
+        <Header
+          search={searchVisible ? true : false}
+          SearchIconPress={() => setSearchVisible(false)}
+          notificationPress={() => navigation.navigate("Notification")}
+        />
         {!searchVisible ? (
           <>
             <CustomInput
@@ -105,34 +114,30 @@ const Home = () => {
             marginTop: searchVisible ? 0 : 10,
           }}
         >
-          <View
-            style={{
-              width: 37,
-              height: 30,
-              backgroundColor: Color.primary,
-              borderRadius: 14,
-              marginRight: 8,
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <CustomText
-              label={"All"}
-              color={Color.yellowPrim}
-              fontSize={14}
-              fontFamily={FontFamily.barlowMedium}
-            />
-          </View>
           <FlatList
             data={catgeroyData}
             showsHorizontalScrollIndicator={false}
             horizontal={true}
-            renderItem={({ item }) => {
-              return <CategoryButton label={item.label} />;
+            renderItem={({ item, index }) => {
+              return (
+                <CategoryButton
+                  onPress={() => setSelectedCat(index)}
+                  label={item.label}
+                  backgroundColor={
+                    selectedCat === index ? Color?.primary : Color?.white
+                  }
+                  color={
+                    selectedCat === index ? Color?.yellowPrim : Color?.black20
+                  }
+                />
+              );
             }}
           />
         </View>
-        <Row heading={"Upcoming Sessions"} heading2={"See all"} />
+        <Row
+          heading={!searchVisible ? "Results" : "Upcoming Sessions"}
+          heading2={"See all"}
+        />
         <View
           style={{
             paddingLeft: searchVisible ? 0 : 6,

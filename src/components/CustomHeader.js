@@ -2,10 +2,17 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import Icons from "./Icons";
 import { Color } from "../theme";
+import CustomText from "./CustomText";
 
-const CustomHeader = ({ onPress }) => {
+const CustomHeader = ({ onPress, headerTitle, rightIcon }) => {
   return (
-    <View>
+    <View
+      style={{
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+      }}
+    >
       <Icons
         name={"left"}
         family={"AntDesign"}
@@ -13,6 +20,8 @@ const CustomHeader = ({ onPress }) => {
         color={Color.black10}
         onPress={onPress}
       />
+      {headerTitle}
+      {rightIcon}
     </View>
   );
 };

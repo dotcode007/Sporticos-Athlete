@@ -4,7 +4,7 @@ import { Color, FontFamily, images } from "../../../../theme";
 import CustomText from "../../../../components/CustomText";
 import Icons from "../../../../components/Icons";
 
-const Header = ({ search, SearchIconPress }) => {
+const Header = ({ search, SearchIconPress, notificationPress }) => {
   return (
     <View
       style={{
@@ -51,6 +51,7 @@ const Header = ({ search, SearchIconPress }) => {
           name={"bell-outline"}
           size={20}
           style={{ marginLeft: 20 }}
+          onPress={notificationPress}
         />
       </View>
     </View>
