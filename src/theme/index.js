@@ -13,6 +13,7 @@ export const images = {
   girl: require("../assets/images/girlImage.png"),
   Poster: require("../assets/images/poster.png"),
   Men: require("../assets/images/men.png"),
+  calender: require("../assets/images/Calender.png"),
 };
 //icons
 export const icons = {
@@ -44,6 +45,8 @@ export const Color = {
   primary: "#212A38",
   yellowPrim: "#D9E76C",
   yellowPrim20: "#B0C929",
+  yellowPrim30: "#B0C92933",
+
   greyLight: "#212A3880",
   greyLight10: "#69696940",
   darkGrey: "#303841",

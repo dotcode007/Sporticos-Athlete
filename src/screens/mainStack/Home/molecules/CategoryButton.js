@@ -1,18 +1,22 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { Color, FontFamily } from "../../../../theme";
 import CustomText from "../../../../components/CustomText";
 
-const CategoryButton = ({ label }) => {
+const CategoryButton = ({ label, color, backgroundColor, onPress }) => {
   return (
-    <View style={styles.parent}>
+    <TouchableOpacity
+      activeOpacity={0.8}
+      onPress={onPress}
+      style={[styles.parent, { backgroundColor: backgroundColor }]}
+    >
       <CustomText
         label={label}
         fontSize={14}
-        color={Color?.black20}
+        color={color}
         fontFamily={FontFamily?.barlowMedium}
       />
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -21,12 +25,13 @@ export default CategoryButton;
 const styles = StyleSheet.create({
   parent: {
     height: 30,
-    width: 90,
+
     borderRadius: 14,
     borderWidth: 1.4,
     borderColor: Color.black20,
     alignItems: "center",
     justifyContent: "center",
     marginRight: 8,
+    paddingHorizontal: 10,
   },
 });

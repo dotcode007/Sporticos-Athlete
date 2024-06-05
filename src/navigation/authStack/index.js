@@ -12,6 +12,9 @@ import ChatScreen from "../../screens/mainStack/ChatScreen";
 import ChatDetailsScreen from "../../screens/mainStack/MessageDetailsScreen";
 import DrawerNavigator from "../drawer";
 import Home from "../../screens/mainStack/Home";
+import BottomTab from "../bottomTab";
+import Notification from "../../screens/mainStack/Notification";
+import Calender from "../../screens/mainStack/Calender";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,20 +22,24 @@ const AuthStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{ headerShown: false }}
-      initialRouteName="OnBoarding"
+      initialRouteName="Calender"
     >
       <Stack.Screen name="AuthSelction" component={AuthSelction} />
-
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="OnBoarding" component={Onboarding} />
       <Stack.Screen name="SignUp" component={SignUp} />
       <Stack.Screen name="ForgetPassword" component={ForgetPassword} />
+      <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Calender" component={Calender} />
+
       <Stack.Screen name="Otp" component={Otp} />
       <Stack.Screen name="ProfilePhoto" component={ProfilePhoto} />
       <Stack.Screen name="SubscriptionPlan" component={SubscriptionPlan} />
       <Stack.Screen name="ChatScreen" component={ChatScreen} />
       <Stack.Screen name="ChatDetails" component={ChatDetailsScreen} />
-      <Stack.Screen name="Drawer" component={DrawerNavigator}/>
+      <Stack.Screen name="Drawer" component={DrawerNavigator} />
+      <Stack.Screen name="BottomTab" component={BottomTab} />
+      <Stack.Screen name="Notification" component={Notification} />
     </Stack.Navigator>
   );
 };
