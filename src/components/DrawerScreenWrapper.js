@@ -20,7 +20,7 @@ import {
   
     const animatedStyle = useAnimatedStyle(() => ({
       transform: [
-        { perspective: 1000 },
+        { perspective: 9000 },
         {
           scale: interpolate(progress.value, [0, 1], [1, 0.8], "clamp"),
         },

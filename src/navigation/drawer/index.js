@@ -9,6 +9,7 @@ import { Animated, View } from "react-native";
 import { interpolate, useAnimatedStyle } from "react-native-reanimated";
 import DrawerSceneWrapper from "../../components/DrawerScreenWrapper";
 import { Color } from "../../theme";
+import SubscriptionPlan from "../../screens/authStack/SubscriptionPlan";
 
 const Drawer = createDrawerNavigator();
 
@@ -25,11 +26,11 @@ const DrawerNavigator = () => {
           drawerActiveBackgroundColor: Color.yellowPrim,
           headerShown: false,
           drawerItemStyle: {
-            borderRadius: 9,
+            borderRadius: 10,
           },
           drawerActiveTintColor: Color.primary,
           drawerStyle: {
-            width: "65%",
+            width: "55%",
             backgroundColor: Color.primary,
             // width: 300,
           },
@@ -38,10 +39,17 @@ const DrawerNavigator = () => {
           },
         }}
       >
-        <Drawer.Screen name="Subscription">
+        <Drawer.Screen name="BottomTab">
           {(props) => (
             <DrawerSceneWrapper>
               <BottomTab {...props} />
+            </DrawerSceneWrapper>
+          )}
+        </Drawer.Screen>
+        <Drawer.Screen name="SubscriptionScreen">
+          {(props) => (
+            <DrawerSceneWrapper>
+              <SubscriptionPlan {...props} />
             </DrawerSceneWrapper>
           )}
         </Drawer.Screen>

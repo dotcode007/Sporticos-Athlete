@@ -24,6 +24,13 @@ export const icons = {
   home: require("../assets/icons/home.png"),
   profile: require("../assets/icons/profile.png"),
   session: require("../assets/icons/session.png"),
+  dollar: require("../assets/icons/dollar.png"),
+  myAccount: require("../assets/icons/myAccount.png"),
+  support: require("../assets/icons/support.png"),
+  terms: require("../assets/icons/terms.png"),
+  privacy: require("../assets/icons/privacy.png"),
+  setting: require("../assets/icons/settings.png"),
+  cross: require("../assets/icons/close.png"),
 };
 //Svgs
 
@@ -52,6 +59,7 @@ export const Color = {
   borderColor: "#CFE1ED",
   messageBodyColor: "#F3F7F9",
   red: "#F07167",
+  iconColor: "#90949c",
 };
 export const FontSize = {
   size_xs: 12,

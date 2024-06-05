@@ -3,8 +3,14 @@ import React from "react";
 import { Color, images } from "../../../theme";
 import CustomButton from "../../../components/CustomButton";
 import CustomText from "../../../components/CustomText";
+import { useDispatch } from "react-redux";
+import { setUserType } from "../../../redux/reducer/userReducer";
 
 const AuthSelction = ({ navigation }) => {
+  const dispatch = useDispatch();
+  const onUserSelect = (type) => {
+    dispatch(setUserType(type));
+  };
   return (
     <SafeAreaView style={styles.parent}>
       <View style={styles.container}>
@@ -14,8 +20,13 @@ const AuthSelction = ({ navigation }) => {
           borderColor={Color.greyLight}
           title={"Register as Mentor"}
           color={Color?.greyLight}
+          onPress={() => onUserSelect("mentor")}
         />
-        <CustomButton marginTop={30} title={"Register as Athlete"} />
+        <CustomButton
+          marginTop={30}
+          title={"Register as Athlete"}
+          onPress={() => onUserSelect("athlete")}
+        />
       </View>
       <View style={{ flex: 1, justifyContent: "flex-end" }}>
         <CustomText
