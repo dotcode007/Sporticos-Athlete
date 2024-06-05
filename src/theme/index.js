@@ -11,6 +11,8 @@ export const images = {
   Check: require("../assets/images/check.png"),
   Verified: require("../assets/images/Verified.png"),
   girl: require("../assets/images/girlImage.png"),
+  Poster: require("../assets/images/poster.png"),
+  Men: require("../assets/images/men.png"),
 };
 //icons
 export const icons = {
@@ -37,6 +39,7 @@ export const Color = {
   white10: "#F5F5F5",
   black: "#000000",
   black10: "#191919",
+  black30: "#121212",
   black20: "#404040",
   primary: "#212A38",
   yellowPrim: "#D9E76C",
@@ -48,6 +51,7 @@ export const Color = {
   grey20: "#8EA0AB",
   borderColor: "#CFE1ED",
   messageBodyColor: "#F3F7F9",
+  red: "#F07167",
 };
 export const FontSize = {
   size_xs: 12,

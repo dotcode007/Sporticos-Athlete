@@ -11,6 +11,7 @@ import SubscriptionPlan from "../../screens/authStack/SubscriptionPlan";
 import ChatScreen from "../../screens/mainStack/ChatScreen";
 import ChatDetailsScreen from "../../screens/mainStack/MessageDetailsScreen";
 import DrawerNavigator from "../drawer";
+import Home from "../../screens/mainStack/Home";
 
 const Stack = createNativeStackNavigator();
 
@@ -32,6 +33,7 @@ const AuthStack = () => {
       <Stack.Screen name="ChatScreen" component={ChatScreen} />
       <Stack.Screen name="ChatDetails" component={ChatDetailsScreen} />
       <Stack.Screen name="Drawer" component={DrawerNavigator}/>
+      <Stack.Screen name="Home" component={Home} />
     </Stack.Navigator>
   );
 };
