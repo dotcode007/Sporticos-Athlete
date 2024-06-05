@@ -18,6 +18,7 @@ export const images = {
 export const icons = {
   send: require("../assets/icons/send.png"),
   attachment: require("../assets/icons/attach.png"),
+  doubleTick: require("../assets/icons/doubleTick.png"),
 };
 //Svgs
 

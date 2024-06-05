@@ -61,11 +61,22 @@ const MessageItem = ({ message }) => {
           )}
         </View>
       </View>
-
-      <CustomText
-        label={message.time}
-        alignSelf={isUser ? "flex-end" : "flex-start"}
-      />
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: !isUser ? "flex-start" : "flex-end",
+          paddingLeft: isUser ? 0 : 40,
+        }}
+      >
+        <Image source={icons.doubleTick} style={styles.doubleTick} />
+        <CustomText
+          label={message.time}
+          alignSelf={isUser ? "flex-end" : "flex-start"}
+          marginLeft={5}
+          fontSize={14}
+          color={Color.grey20}
+        />
+      </View>
     </>
   );
 };
@@ -175,12 +186,17 @@ const styles = StyleSheet.create({
     height: 20,
   },
   profileImg: {
-    height: 30,
-    width: 30,
+    height: 35,
+    width: 35,
     borderRadius: 30,
     marginRight: 10,
+    marginBottom: 10,
   },
-  rowImg: { flexDirection: "row", alignItems: "center" },
+  rowImg: { flexDirection: "row", alignItems: "flex-end", marginTop: 10 },
+  doubleTick: {
+    height: 16,
+    width: 16,
+  },
 });
 
 export default ChatDetailsScreen;
