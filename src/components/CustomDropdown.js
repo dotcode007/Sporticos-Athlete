@@ -56,17 +56,19 @@ const CustomDropdownPicker = ({
   return (
     <>
       <View style={[styles.dropdownMainContainer, dropdownMainStyle]}>
-        <CustomText
-          label={HeaderLabel}
-          marginBottom={5}
-          fontSize={16}
-          fontFamily={FontFamily.barlowMedium}
-        />
+        {HeaderLabel && (
+          <CustomText
+            label={HeaderLabel}
+            marginBottom={HeaderLabel ? 5 : 0}
+            fontSize={16}
+            fontFamily={FontFamily.barlowMedium}
+          />
+        )}
+
         <TouchableOpacity
           disabled={disabled}
           activeOpacity={0.6}
           style={[
-            insideContentStyle,
             {
               flexDirection: "row",
               alignItems: "center",
@@ -78,6 +80,7 @@ const CustomDropdownPicker = ({
               borderWidth: 1,
               borderColor: Color?.greyLight10,
             },
+            insideContentStyle,
           ]}
           onPress={toggleDropdown}
         >

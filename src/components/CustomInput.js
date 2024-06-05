@@ -37,6 +37,10 @@ const CustomInput = ({
   HeaderLabel,
   height,
   multiline,
+  backgroundColor,
+  borderWidth,
+  borderRadius,
+  continerStyle,
 }) => {
   const [hidePass, setHidePass] = useState(secureTextEntry);
   return (
@@ -52,10 +56,13 @@ const CustomInput = ({
           styles.inputContainer,
           {
             width: width || "100%",
-            borderWidth: 1,
+            borderWidth: borderWidth || 1,
+            backgroundColor: backgroundColor || Color.white10,
             borderColor: errorMessage ? Color.error : Color?.greyLight10,
             height: height || 58,
+            borderRadius: borderRadius || 12,
           },
+          continerStyle,
         ]}
       >
         <TextInput
@@ -130,10 +137,8 @@ const styles = StyleSheet.create({
   inputContainer: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: Color.white10,
-    marginBottom: 2,
 
-    borderRadius: 12,
+    marginBottom: 2,
   },
   icon: {
     padding: 10,

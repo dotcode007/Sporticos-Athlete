@@ -10,6 +10,7 @@ import ProfilePhoto from "../../screens/authStack/ProfilePhoto";
 import SubscriptionPlan from "../../screens/authStack/SubscriptionPlan";
 import ChatScreen from "../../screens/mainStack/ChatScreen";
 import ChatDetailsScreen from "../../screens/mainStack/MessageDetailsScreen";
+import Home from "../../screens/mainStack/Home";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +18,7 @@ const AuthStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{ headerShown: false }}
-      initialRouteName="OnBoarding"
+      initialRouteName="Home"
     >
       <Stack.Screen name="AuthSelction" component={AuthSelction} />
 
@@ -30,7 +31,7 @@ const AuthStack = () => {
       <Stack.Screen name="SubscriptionPlan" component={SubscriptionPlan} />
       <Stack.Screen name="ChatScreen" component={ChatScreen} />
       <Stack.Screen name="ChatDetails" component={ChatDetailsScreen} />
-
+      <Stack.Screen name="Home" component={Home} />
     </Stack.Navigator>
   );
 };
