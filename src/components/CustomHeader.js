@@ -2,15 +2,15 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import Icons from "./Icons";
 import { Color } from "../theme";
-import CustomText from "./CustomText";
 
-const CustomHeader = ({ onPress, headerTitle, rightIcon }) => {
+const CustomHeader = ({ onPress, headerTitle, rightIcon, marginBottom }) => {
   return (
     <View
       style={{
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
+        marginBottom: marginBottom,
       }}
     >
       <Icons

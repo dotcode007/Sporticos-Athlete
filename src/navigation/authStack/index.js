@@ -15,6 +15,10 @@ import Home from "../../screens/mainStack/Home";
 import BottomTab from "../bottomTab";
 import Notification from "../../screens/mainStack/Notification";
 import Calender from "../../screens/mainStack/Calender";
+import LiveSession from "../../screens/mainStack/LiveSession";
+import SessionDetails from "../../screens/mainStack/SessionDetails";
+import Mentors from "../../screens/mainStack/Mentors";
+import MentorDetails from "../../screens/mainStack/MentorDetails";
 
 const Stack = createNativeStackNavigator();
 
@@ -30,6 +34,11 @@ const AuthStack = () => {
       <Stack.Screen name="SignUp" component={SignUp} />
       <Stack.Screen name="ForgetPassword" component={ForgetPassword} />
       <Stack.Screen name="Home" component={Home} />
+      <Stack.Screen name="Calender" component={Calender} />
+      <Stack.Screen name="LiveSession" component={LiveSession} />
+      <Stack.Screen name="SessionDetails" component={SessionDetails} />
+      <Stack.Screen name="Mentors" component={Mentors} />
+      <Stack.Screen name="MentorDetails" component={MentorDetails} />
       <Stack.Screen name="Otp" component={Otp} />
       <Stack.Screen name="ProfilePhoto" component={ProfilePhoto} />
       <Stack.Screen name="SubscriptionPlan" component={SubscriptionPlan} />
