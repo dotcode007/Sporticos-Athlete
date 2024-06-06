@@ -6,17 +6,11 @@ import AntDesign from "react-native-vector-icons/AntDesign";
 import { Color, icons } from "../../theme";
 import DrawerScreenWrapper from "../../components/DrawerScreenWrapper";
 import Home from "../../screens/mainStack/Home";
+import Calender from "../../screens/mainStack/Calender";
 const Tab = createBottomTabNavigator();
 
 const Stack = createNativeStackNavigator();
 
-const Calendar = () => {
-  return (
-    <View>
-      <Text>Calendar</Text>
-    </View>
-  );
-};
 
 const Sessions = () => {
   return (
@@ -63,7 +57,7 @@ const BottomTab = ({ animatedStyle }) => {
 
       <Tab.Screen
         name="Calendar"
-        component={Calendar}
+        component={Calender}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Image
