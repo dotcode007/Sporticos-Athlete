@@ -1,4 +1,10 @@
-import { StyleSheet, SafeAreaView, View, FlatList } from "react-native";
+import {
+  StyleSheet,
+  SafeAreaView,
+  View,
+  FlatList,
+  ScrollView,
+} from "react-native";
 import React, { useState } from "react";
 import { Color, FontFamily } from "../../../theme";
 import CustomHeader from "../../../components/CustomHeader";
@@ -9,7 +15,7 @@ import CategoryButton from "../Home/molecules/CategoryButton";
 import SessionsPoster from "../../../components/SessionsPoster";
 import Pagination from "../../../components/Pagination";
 
-const LiveSession = () => {
+const LiveSession = ({ navigation }) => {
   const [selectedCat, setSelectedCat] = useState(0);
   const catgeroyData = [
     {
@@ -52,86 +58,96 @@ const LiveSession = () => {
           }
           rightIcon={<View />}
         />
-
-        <CustomInput
-          backgroundColor={Color.white}
-          borderWidth={-1}
-          borderRadius={5}
-          placeholder={"Search"}
-          continerStyle={{
-            shadowColor: "#000",
-            shadowOffset: {
-              width: 0,
-              height: 0,
-            },
-            shadowOpacity: 0.1,
-            shadowRadius: 2.84,
-
-            elevation: 2,
-          }}
-        />
-        <CustomDropdownPicker
-          insideContentStyle={{
-            backgroundColor: Color?.white,
-            borderWidth: -1,
-            borderRadius: 5,
-            marginTop: -10,
-            shadowColor: "#000",
-            shadowOffset: {
-              width: 0,
-              height: 0,
-            },
-            shadowOpacity: 0.1,
-            shadowRadius: 2.84,
-
-            elevation: 2,
-          }}
-          label={"Select Session Type"}
-        />
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            marginBottom: 10,
-            marginTop: 10,
-          }}
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          style={{ marginBottom: 30 }}
         >
-          <FlatList
-            data={catgeroyData}
-            showsHorizontalScrollIndicator={false}
-            horizontal={true}
-            renderItem={({ item, index }) => {
-              return (
-                <CategoryButton
-                  onPress={() => setSelectedCat(index)}
-                  label={item.label}
-                  backgroundColor={
-                    selectedCat === index ? Color?.primary : Color?.white
-                  }
-                  color={
-                    selectedCat === index ? Color?.yellowPrim : Color?.black20
-                  }
-                />
-              );
+          <CustomInput
+            backgroundColor={Color.white}
+            borderWidth={-1}
+            borderRadius={5}
+            placeholder={"Search"}
+            continerStyle={{
+              shadowColor: "#000",
+              shadowOffset: {
+                width: 0,
+                height: 0,
+              },
+              shadowOpacity: 0.1,
+              shadowRadius: 2.84,
+
+              elevation: 2,
             }}
           />
-        </View>
-        <CustomText
-          label={"Results"}
-          fontSize={18}
-          fontFamily={FontFamily.barlowSemiBold}
-          marginTop={5}
-          marginBottom={10}
-        />
-        <View
-          style={{
-            paddingLeft: 5,
-          }}
-        >
-          <SessionsPoster width={340} />
-          <SessionsPoster width={340} />
-        </View>
-        <Pagination totalPages={3} marginBottom={10} />
+          <CustomDropdownPicker
+            insideContentStyle={{
+              backgroundColor: Color?.white,
+              borderWidth: -1,
+              borderRadius: 5,
+              marginTop: -10,
+              shadowColor: "#000",
+              shadowOffset: {
+                width: 0,
+                height: 0,
+              },
+              shadowOpacity: 0.1,
+              shadowRadius: 2.84,
+
+              elevation: 2,
+            }}
+            label={"Select Session Type"}
+          />
+          <View
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+              marginBottom: 10,
+              marginTop: 10,
+            }}
+          >
+            <FlatList
+              data={catgeroyData}
+              showsHorizontalScrollIndicator={false}
+              horizontal={true}
+              renderItem={({ item, index }) => {
+                return (
+                  <CategoryButton
+                    onPress={() => setSelectedCat(index)}
+                    label={item.label}
+                    backgroundColor={
+                      selectedCat === index ? Color?.primary : Color?.white
+                    }
+                    color={
+                      selectedCat === index ? Color?.yellowPrim : Color?.black20
+                    }
+                  />
+                );
+              }}
+            />
+          </View>
+          <CustomText
+            label={"Results"}
+            fontSize={18}
+            fontFamily={FontFamily.barlowSemiBold}
+            marginTop={5}
+            marginBottom={10}
+          />
+          <View
+            style={{
+              paddingLeft: 5,
+            }}
+          >
+            <SessionsPoster
+              width={"100%"}
+              onPress={() => navigation.navigate("SessionDetails")}
+            />
+            <SessionsPoster
+              width={"100%"}
+              onPress={() => navigation.navigate("SessionDetails")}
+            />
+          </View>
+          <Pagination totalPages={3} marginBottom={10} />
+        </ScrollView>
       </View>
     </SafeAreaView>
   );

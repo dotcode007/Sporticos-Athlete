@@ -126,6 +126,9 @@ const OnboardingSlider = ({ navigation }) => {
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
+          if (activeSlide === 0 || activeSlide === 1) {
+            setActiveSlide(activeSlide + 1);
+          }
           if (activeSlide === 2) {
             navigation.navigate("AuthSelction");
           }

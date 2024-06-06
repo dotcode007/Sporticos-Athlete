@@ -35,7 +35,12 @@ const Login = ({ navigation }) => {
           alignSelf={"flex-end"}
           onPress={() => navigation.navigate("ForgetPassword")}
         />
-        <CustomButton marginTop={15} title={"Login"} color={Color?.white} />
+        <CustomButton
+          onPress={() => navigation.navigate("Drawer")}
+          marginTop={15}
+          title={"Login"}
+          color={Color?.white}
+        />
         <CustomText
           label={"Or Login with"}
           fontSize={15}

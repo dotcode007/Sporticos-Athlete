@@ -73,7 +73,7 @@ const SubscriptionPlan = ({ navigation }) => {
           alignSelf={"center"}
           marginTop={25}
           fontSize={15}
-          onPress={()=> navigation.navigate("ChatScreen")}
+          onPress={()=> navigation.navigate("Drawer")}
           color={Color?.black20}
           fontFamily={FontFamily.barlowBold}
           textDecorationLine={"underline"}

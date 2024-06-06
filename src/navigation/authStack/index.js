@@ -26,7 +26,7 @@ const AuthStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{ headerShown: false }}
-      initialRouteName="AuthSelction"
+      initialRouteName="OnBoarding"
     >
       <Stack.Screen name="AuthSelction" component={AuthSelction} />
       <Stack.Screen name="Login" component={Login} />
@@ -35,15 +35,9 @@ const AuthStack = () => {
       <Stack.Screen name="ForgetPassword" component={ForgetPassword} />
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Calender" component={Calender} />
-      <Stack.Screen name="LiveSession" component={LiveSession} />
-      <Stack.Screen name="SessionDetails" component={SessionDetails} />
-      <Stack.Screen name="Mentors" component={Mentors} />
-      <Stack.Screen name="MentorDetails" component={MentorDetails} />
       <Stack.Screen name="Otp" component={Otp} />
       <Stack.Screen name="ProfilePhoto" component={ProfilePhoto} />
       <Stack.Screen name="SubscriptionPlan" component={SubscriptionPlan} />
-      <Stack.Screen name="ChatScreen" component={ChatScreen} />
-      <Stack.Screen name="ChatDetails" component={ChatDetailsScreen} />
       <Stack.Screen name="Drawer" component={DrawerNavigator} />
       <Stack.Screen name="Notification" component={Notification} />
     </Stack.Navigator>

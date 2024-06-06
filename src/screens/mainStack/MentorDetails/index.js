@@ -56,10 +56,9 @@ const MentorDetails = () => {
           ))}
         </View>
         <Row heading={"Previous Sessions"} heading2={"See all"} />
-        <SessionsPoster width={350} height={120} />
-        <SessionsPoster width={350} height={120} />
+        <SessionsPoster width={"100%"} height={120} />
+        <SessionsPoster width={"100%"} height={120} />
 
-        <SessionsPoster width={350} height={120} />
       </View>
     </SafeAreaView>
   );

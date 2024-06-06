@@ -1,11 +1,11 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { Color, FontFamily, images } from "../../../../theme";
 import CustomText from "../../../../components/CustomText";
 
-const MentorProfile = () => {
+const MentorProfile = ({onPress}) => {
   return (
-    <View style={styles.parent}>
+    <TouchableOpacity onPress={onPress} style={styles.parent}>
       <View
         style={{
           height: "66%",
@@ -41,7 +41,7 @@ const MentorProfile = () => {
           })}
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

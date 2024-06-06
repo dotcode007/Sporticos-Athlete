@@ -20,12 +20,18 @@ const AuthSelction = ({ navigation }) => {
           borderColor={Color.greyLight}
           title={"Register as Mentor"}
           color={Color?.greyLight}
-          onPress={() => onUserSelect("mentor")}
+          onPress={() => {
+            navigation.navigate("SignUp");
+            onUserSelect("mentor");
+          }}
         />
         <CustomButton
           marginTop={30}
           title={"Register as Athlete"}
-          onPress={() => onUserSelect("athlete")}
+          onPress={() => {
+            navigation.navigate("SignUp");
+            onUserSelect("athlete");
+          }}
         />
       </View>
       <View style={{ flex: 1, justifyContent: "flex-end" }}>

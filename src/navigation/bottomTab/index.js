@@ -7,32 +7,49 @@ import { Color, icons } from "../../theme";
 import DrawerScreenWrapper from "../../components/DrawerScreenWrapper";
 import Home from "../../screens/mainStack/Home";
 import Calender from "../../screens/mainStack/Calender";
+import ChatScreen from "../../screens/mainStack/ChatScreen";
+import ChatDetailsScreen from "../../screens/mainStack/MessageDetailsScreen";
+import LiveSession from "../../screens/mainStack/LiveSession";
+import SessionDetails from "../../screens/mainStack/SessionDetails";
+import MentorDetails from "../../screens/mainStack/MentorDetails";
+import Mentors from "../../screens/mainStack/Mentors";
 const Tab = createBottomTabNavigator();
 
 const Stack = createNativeStackNavigator();
 
-
-const Sessions = () => {
+const MessageStack = () => {
   return (
-    <View>
-      <Text>Sessions</Text>
-    </View>
+    <Stack.Navigator
+      initialRouteName="ChatScreen"
+      screenOptions={{ headerShown: false }}
+    >
+      <Stack.Screen name="ChatScreen" component={ChatScreen} />
+      <Stack.Screen name="ChatDetails" component={ChatDetailsScreen} />
+    </Stack.Navigator>
   );
 };
 
-const Mentors = () => {
+const SessionStacks = () => {
   return (
-    <View>
-      <Text>Mentors</Text>
-    </View>
+    <Stack.Navigator
+      initialRouteName="ChatScreen"
+      screenOptions={{ headerShown: false }}
+    >
+      <Stack.Screen name="LiveSession" component={LiveSession} />
+      <Stack.Screen name="SessionDetails" component={SessionDetails} />
+    </Stack.Navigator>
   );
 };
 
-const Chat = () => {
+const MentorStack = () => {
   return (
-    <View>
-      <Text>Chat</Text>
-    </View>
+    <Stack.Navigator
+      initialRouteName="ChatScreen"
+      screenOptions={{ headerShown: false }}
+    >
+      <Stack.Screen name="Mentors" component={Mentors} />
+      <Stack.Screen name="MentorDetails" component={MentorDetails} />
+    </Stack.Navigator>
   );
 };
 
@@ -70,7 +87,7 @@ const BottomTab = ({ animatedStyle }) => {
       />
       <Tab.Screen
         name="Sessions"
-        component={Sessions}
+        component={SessionStacks}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Image
@@ -83,7 +100,7 @@ const BottomTab = ({ animatedStyle }) => {
       />
       <Tab.Screen
         name="Mentors"
-        component={Mentors}
+        component={MentorStack}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Image
@@ -96,7 +113,7 @@ const BottomTab = ({ animatedStyle }) => {
       />
       <Tab.Screen
         name="Chat"
-        component={Chat}
+        component={MessageStack}
         options={{
           tabBarIcon: ({ color, size }) => (
             <Image source={icons.chat} style={styles.img} tintColor={color} />

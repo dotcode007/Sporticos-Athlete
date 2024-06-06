@@ -5,11 +5,12 @@ import CustomHeader from "../../../components/CustomHeader";
 import CustomText from "../../../components/CustomText";
 import NotificationRow from "./molecules/NotificationRow";
 
-const Notification = () => {
+const Notification = ({navigation}) => {
   return (
     <SafeAreaView style={styles.parent}>
       <View style={styles.container}>
         <CustomHeader
+          onPress={() => navigation.goBack()}
           headerTitle={
             <CustomText
               label={"Notifications"}

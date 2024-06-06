@@ -7,11 +7,12 @@ import CalendarPicker from "react-native-calendar-picker";
 import moment from "moment";
 import SessionsPoster from "../../../components/SessionsPoster";
 
-const Calender = () => {
+const Calender = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.parent}>
       <View style={styles.container}>
         <CustomHeader
+          onPress={() => navigation.goBack()}
           headerTitle={
             <CustomText
               label={"Calendar"}

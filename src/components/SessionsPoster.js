@@ -1,11 +1,11 @@
-import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
+import { Image, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { Color, FontFamily, images } from "../theme";
 import CustomText from "./CustomText";
 
-const SessionsPoster = ({ height, marginBottom, width }) => {
+const SessionsPoster = ({ height, marginBottom, width,onPress }) => {
   return (
-    <View
+    <TouchableOpacity
       style={[
         styles.container,
         {
@@ -14,6 +14,7 @@ const SessionsPoster = ({ height, marginBottom, width }) => {
           marginBottom: marginBottom || 10,
         },
       ]}
+      onPress={onPress}
     >
       <ImageBackground
         source={images.Poster}
@@ -76,7 +77,7 @@ const SessionsPoster = ({ height, marginBottom, width }) => {
           </View>
         </View>
       </ImageBackground>
-    </View>
+    </TouchableOpacity>
   );
 };
 

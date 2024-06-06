@@ -10,7 +10,7 @@ import MentorProfile from "./molecules/MentorProfile";
 import MentorLikeCard from "./molecules/MentorLikeCard";
 import Pagination from "../../../components/Pagination";
 
-const Mentors = () => {
+const Mentors = ({navigation}) => {
   const [selectedCat, setSelectedCat] = useState(0);
   const catgeroyData = [
     {
@@ -108,7 +108,11 @@ const Mentors = () => {
             showsHorizontalScrollIndicator={false}
             horizontal
             renderItem={() => {
-              return <MentorProfile />;
+              return (
+                <MentorProfile
+                  onPress={() => navigation.navigate("MentorDetails")}
+                />
+              );
             }}
           />
         </View>
