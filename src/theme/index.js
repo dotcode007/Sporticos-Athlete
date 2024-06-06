@@ -14,6 +14,14 @@ export const images = {
   Poster: require("../assets/images/poster.png"),
   Men: require("../assets/images/men.png"),
   calender: require("../assets/images/Calender.png"),
+  banner: require("../assets/images/BackgroundImage.png"),
+  Calender2: require("../assets/images/Calender2.png"),
+  clock: require("../assets/images/clock.png"),
+  Girl2: require("../assets/images/Girl2.png"),
+  star: require("../assets/images/Star.png"),
+  men2: require("../assets/images/men2.png"),
+  medal: require("../assets/images/medal.png"),
+  messages: require("../assets/images/messages.png"),
 };
 //icons
 export const icons = {
@@ -45,6 +53,7 @@ export const FontFamily = {
 export const Color = {
   white: "#FFFFFF",
   white10: "#F5F5F5",
+  white20: "#F3F4F6",
   black: "#000000",
   black10: "#191919",
   black30: "#121212",
@@ -56,9 +65,12 @@ export const Color = {
 
   greyLight: "#212A3880",
   greyLight10: "#69696940",
+
   darkGrey: "#303841",
   Grey10: "#6B7280",
   grey20: "#8EA0AB",
+  grey30: "#919EAB",
+  grey40: "#B9B9B9",
   borderColor: "#CFE1ED",
   messageBodyColor: "#F3F7F9",
   red: "#F07167",

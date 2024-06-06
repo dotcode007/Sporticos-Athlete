@@ -2,14 +2,15 @@ import { StyleSheet, SafeAreaView, View, FlatList } from "react-native";
 import React, { useState } from "react";
 import { Color, FontFamily } from "../../../theme";
 import CustomHeader from "../../../components/CustomHeader";
-import CustomText from "../../../components/CustomText";
 import CustomInput from "../../../components/CustomInput";
-import CustomDropdownPicker from "../../../components/CustomDropdown";
+import CustomText from "../../../components/CustomText";
 import CategoryButton from "../Home/molecules/CategoryButton";
-import SessionsPoster from "../../../components/SessionsPoster";
+import Row from "../Home/molecules/Row";
+import MentorProfile from "./molecules/MentorProfile";
+import MentorLikeCard from "./molecules/MentorLikeCard";
 import Pagination from "../../../components/Pagination";
 
-const LiveSession = () => {
+const Mentors = () => {
   const [selectedCat, setSelectedCat] = useState(0);
   const catgeroyData = [
     {
@@ -41,10 +42,9 @@ const LiveSession = () => {
     <SafeAreaView style={styles.parent}>
       <View style={styles.container}>
         <CustomHeader
-          marginBottom={20}
           headerTitle={
             <CustomText
-              label={"Live Sessions"}
+              label={"Mentors"}
               color={Color.black10}
               fontSize={22}
               fontFamily={FontFamily.barlowSemiBold}
@@ -52,7 +52,6 @@ const LiveSession = () => {
           }
           rightIcon={<View />}
         />
-
         <CustomInput
           backgroundColor={Color.white}
           borderWidth={-1}
@@ -70,30 +69,10 @@ const LiveSession = () => {
             elevation: 2,
           }}
         />
-        <CustomDropdownPicker
-          insideContentStyle={{
-            backgroundColor: Color?.white,
-            borderWidth: -1,
-            borderRadius: 5,
-            marginTop: -10,
-            shadowColor: "#000",
-            shadowOffset: {
-              width: 0,
-              height: 0,
-            },
-            shadowOpacity: 0.1,
-            shadowRadius: 2.84,
-
-            elevation: 2,
-          }}
-          label={"Select Session Type"}
-        />
         <View
           style={{
             flexDirection: "row",
             alignItems: "center",
-            marginBottom: 10,
-            marginTop: 10,
           }}
         >
           <FlatList
@@ -116,28 +95,40 @@ const LiveSession = () => {
             }}
           />
         </View>
-        <CustomText
-          label={"Results"}
-          fontSize={18}
-          fontFamily={FontFamily.barlowSemiBold}
-          marginTop={5}
-          marginBottom={10}
-        />
+        <Row heading={"Popular Mentors"} heading2={"See all"} />
         <View
           style={{
-            paddingLeft: 5,
+            flexDirection: "row",
+            alignItems: "center",
+            marginBottom: 5,
           }}
         >
-          <SessionsPoster width={340} />
-          <SessionsPoster width={340} />
+          <FlatList
+            data={[1, 2, 3, 4]}
+            showsHorizontalScrollIndicator={false}
+            horizontal
+            renderItem={() => {
+              return <MentorProfile />;
+            }}
+          />
         </View>
-        <Pagination totalPages={3} marginBottom={10} />
+        <Row heading={" Mentors"} heading2={"See all"} />
+        <View style={{ height: 230 }}>
+          <FlatList
+            showsVerticalScrollIndicator={false}
+            data={[1, 2, 3, 4, 5]}
+            renderItem={() => {
+              return <MentorLikeCard />;
+            }}
+          />
+        </View>
+        <Pagination totalPages={4} />
       </View>
     </SafeAreaView>
   );
 };
 
-export default LiveSession;
+export default Mentors;
 
 const styles = StyleSheet.create({
   parent: {
