@@ -43,6 +43,8 @@ export const icons = {
   privacy: require("../assets/icons/privacy.png"),
   setting: require("../assets/icons/settings.png"),
   cross: require("../assets/icons/close.png"),
+  lock: require("../assets/icons/lock.png"),
+  language: require("../assets/icons/language.png"),
 };
 //Svgs
 
@@ -82,6 +84,8 @@ export const Color = {
   messageBodyColor: "#F3F7F9",
   red: "#F07167",
   iconColor: "#90949c",
+  borderColorWhite: "#E9ECEF",
+  inputBorderColor: "#f1f2f5",
 };
 export const FontSize = {
   size_xs: 12,

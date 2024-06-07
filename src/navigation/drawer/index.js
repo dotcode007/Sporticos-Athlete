@@ -10,6 +10,8 @@ import { interpolate, useAnimatedStyle } from "react-native-reanimated";
 import DrawerSceneWrapper from "../../components/DrawerScreenWrapper";
 import { Color } from "../../theme";
 import SubscriptionPlan from "../../screens/authStack/SubscriptionPlan";
+import AppSetting from "../../screens/mainStack/AppSetting";
+import ChangePassword from "../../screens/mainStack/ChangePassword";
 
 const Drawer = createDrawerNavigator();
 
@@ -50,6 +52,20 @@ const DrawerNavigator = () => {
           {(props) => (
             <DrawerSceneWrapper>
               <SubscriptionPlan {...props} />
+            </DrawerSceneWrapper>
+          )}
+        </Drawer.Screen>
+        <Drawer.Screen name="SettingsScreen">
+          {(props) => (
+            <DrawerSceneWrapper>
+              <AppSetting {...props} />
+            </DrawerSceneWrapper>
+          )}
+        </Drawer.Screen>
+        <Drawer.Screen name="ChangePassword">
+          {(props) => (
+            <DrawerSceneWrapper>
+              <ChangePassword {...props} />
             </DrawerSceneWrapper>
           )}
         </Drawer.Screen>
