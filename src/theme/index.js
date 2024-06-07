@@ -25,6 +25,9 @@ export const images = {
   masterCard: require("../assets/images/Mastercard.png"),
   Mir: require("../assets/images/Mir.png"),
   Visa: require("../assets/images/Visa.png"),
+  GPay: require("../assets/images/GooglePay.png"),
+  ApplePay: require("../assets/images/ApplePay.png"),
+  googleIcon: require("../assets/images/googleIcon.png"),
 };
 //icons
 export const icons = {
@@ -72,6 +75,9 @@ export const Color = {
 
   greyLight: "#212A3880",
   greyLight10: "#69696940",
+  greyLight20: "#ACACAC",
+  greyLight30: "#677294",
+  greyLight40: "#8792A2",
 
   darkGrey: "#303841",
   Grey10: "#6B7280",
