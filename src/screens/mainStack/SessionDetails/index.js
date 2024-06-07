@@ -145,7 +145,10 @@ const SessionDetails = ({ navigation }) => {
           marginTop={6}
           marginBottom={20}
         />
-        <CustomButton title={"Book Session"} />
+        <CustomButton
+          title={"Book Session"}
+          onPress={() => navigation.navigate("SessionBooking")}
+        />
       </ScrollView>
     </View>
   );

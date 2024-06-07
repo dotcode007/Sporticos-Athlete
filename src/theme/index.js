@@ -22,6 +22,9 @@ export const images = {
   men2: require("../assets/images/men2.png"),
   medal: require("../assets/images/medal.png"),
   messages: require("../assets/images/messages.png"),
+  masterCard: require("../assets/images/Mastercard.png"),
+  Mir: require("../assets/images/Mir.png"),
+  Visa: require("../assets/images/Visa.png"),
 };
 //icons
 export const icons = {
@@ -54,14 +57,18 @@ export const Color = {
   white: "#FFFFFF",
   white10: "#F5F5F5",
   white20: "#F3F4F6",
+
   black: "#000000",
   black10: "#191919",
   black30: "#121212",
   black20: "#404040",
+  black40: "#333333",
+  black50: "#1D1D1D",
   primary: "#212A38",
   yellowPrim: "#D9E76C",
   yellowPrim20: "#B0C929",
   yellowPrim30: "#B0C92933",
+  yellowPrim40: "#C4DD00",
 
   greyLight: "#212A3880",
   greyLight10: "#69696940",

@@ -13,6 +13,8 @@ import LiveSession from "../../screens/mainStack/LiveSession";
 import SessionDetails from "../../screens/mainStack/SessionDetails";
 import MentorDetails from "../../screens/mainStack/MentorDetails";
 import Mentors from "../../screens/mainStack/Mentors";
+import SessionBooking from "../../screens/mainStack/SessionBooking";
+import CardScreen from "../../screens/mainStack/CardScreen";
 const Tab = createBottomTabNavigator();
 
 const Stack = createNativeStackNavigator();
@@ -37,6 +39,8 @@ const SessionStacks = () => {
     >
       <Stack.Screen name="LiveSession" component={LiveSession} />
       <Stack.Screen name="SessionDetails" component={SessionDetails} />
+      <Stack.Screen name="SessionBooking" component={SessionBooking} />
+      <Stack.Screen name="CardScreen" component={CardScreen} />
     </Stack.Navigator>
   );
 };
