@@ -42,13 +42,14 @@ const CustomInput = ({
   borderRadius,
   continerStyle,
   marginBottom,
+  HeaderLabelBottom,
 }) => {
   const [hidePass, setHidePass] = useState(secureTextEntry);
   return (
     <View style={{ marginBottom: marginBottom || 17 }}>
       <CustomText
         label={HeaderLabel}
-        marginBottom={5}
+        marginBottom={HeaderLabelBottom || 5}
         fontSize={16}
         fontFamily={FontFamily.barlowMedium}
       />

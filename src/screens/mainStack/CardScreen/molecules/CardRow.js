@@ -1,11 +1,15 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { Color, images } from "../../../../theme";
 
-const CardRow = ({ borderColor, backgroundColor, source }) => {
+const CardRow = ({ borderColor, backgroundColor, source, onPress }) => {
   return (
     <View style={styles.Parent}>
-      <View style={[styles.circle, { borderColor: borderColor }]}>
+      <TouchableOpacity
+        style={[styles.circle, { borderColor: borderColor }]}
+        activeOpacity={0.8}
+        onPress={onPress}
+      >
         <View
           style={{
             backgroundColor: backgroundColor,
@@ -14,7 +18,7 @@ const CardRow = ({ borderColor, backgroundColor, source }) => {
             borderRadius: 10,
           }}
         />
-      </View>
+      </TouchableOpacity>
       <Image
         source={source}
         style={{ width: 28, height: 20, marginLeft: 10, resizeMode: "contain" }}
