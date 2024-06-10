@@ -19,6 +19,7 @@ import LiveSession from "../../screens/mainStack/LiveSession";
 import SessionDetails from "../../screens/mainStack/SessionDetails";
 import Mentors from "../../screens/mainStack/Mentors";
 import MentorDetails from "../../screens/mainStack/MentorDetails";
+import EditProfile from "../../screens/mainStack/EditProfile";
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +30,7 @@ const AuthStack = () => {
       initialRouteName="OnBoarding"
     >
       <Stack.Screen name="AuthSelction" component={AuthSelction} />
+
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="OnBoarding" component={Onboarding} />
       <Stack.Screen name="SignUp" component={SignUp} />

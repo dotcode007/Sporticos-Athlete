@@ -27,7 +27,7 @@ const AppSetting = ({ navigation }) => {
             fontSize={14}
             fontFamily={FontFamily.barlowMedium}
             marginLeft={5}
-            onPress={()=> navigation.navigate("ChangePassword")}
+            onPress={() => navigation.navigate("ChangePassword")}
           />
         </View>
         <View style={styles.justifySpaceBetween}>
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   flexEndContainer: {
     position: "absolute",
     bottom: 30,
-    alignSelf:"center"
+    alignSelf: "center",
   },
 });
 

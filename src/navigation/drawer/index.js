@@ -12,6 +12,9 @@ import { Color } from "../../theme";
 import SubscriptionPlan from "../../screens/authStack/SubscriptionPlan";
 import AppSetting from "../../screens/mainStack/AppSetting";
 import ChangePassword from "../../screens/mainStack/ChangePassword";
+import Support from "../../screens/mainStack/Support";
+import EditProfile from "../../screens/mainStack/EditProfile";
+import TermCondtion from "../../screens/mainStack/TermCondtion";
 
 const Drawer = createDrawerNavigator();
 
@@ -55,10 +58,31 @@ const DrawerNavigator = () => {
             </DrawerSceneWrapper>
           )}
         </Drawer.Screen>
+        <Drawer.Screen name="EditProfile">
+          {(props) => (
+            <DrawerSceneWrapper>
+              <EditProfile {...props} />
+            </DrawerSceneWrapper>
+          )}
+        </Drawer.Screen>
+        <Drawer.Screen name="Support">
+          {(props) => (
+            <DrawerSceneWrapper>
+              <Support {...props} />
+            </DrawerSceneWrapper>
+          )}
+        </Drawer.Screen>
         <Drawer.Screen name="SettingsScreen">
           {(props) => (
             <DrawerSceneWrapper>
               <AppSetting {...props} />
+            </DrawerSceneWrapper>
+          )}
+        </Drawer.Screen>
+        <Drawer.Screen name="TermCondtion">
+          {(props) => (
+            <DrawerSceneWrapper>
+              <TermCondtion {...props} />
             </DrawerSceneWrapper>
           )}
         </Drawer.Screen>

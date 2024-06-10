@@ -43,6 +43,7 @@ const CustomInput = ({
   continerStyle,
   marginBottom,
   HeaderLabelBottom,
+  verticalAlign,
 }) => {
   const [hidePass, setHidePass] = useState(secureTextEntry);
   return (
@@ -99,6 +100,7 @@ const CustomInput = ({
           secureTextEntry={hidePass}
           autoCorrect={false}
           onSubmitEditing={onSubmitEditing}
+          verticalAlign={verticalAlign}
         />
         {secureTextEntry ? (
           <MaterialCommunityIcons

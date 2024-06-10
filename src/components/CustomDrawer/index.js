@@ -12,9 +12,9 @@ const CustomDrawer = (props) => {
 
   const drawerData = [
     { name: "Subscription", icon: icons.dollar, screen: "SubscriptionScreen" },
-    { name: "My Account", icon: icons.myAccount, screen: "MyAccountScreen" },
-    { name: "Support", icon: icons.support, screen: "SupportScreen" },
-    { name: "Terms of Use", icon: icons.terms, screen: "TermsScreen" },
+    { name: "My Account", icon: icons.myAccount, screen: "EditProfile" },
+    { name: "Support", icon: icons.support, screen: "Support" },
+    { name: "Terms of Use", icon: icons.terms, screen: "TermCondtion" },
     { name: "Privacy Policy", icon: icons.privacy, screen: "PrivacyScreen" },
     { name: "App Settings", icon: icons.setting, screen: "SettingsScreen" },
   ];

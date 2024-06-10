@@ -1,12 +1,14 @@
 import { View, Text, SafeAreaView, StyleSheet, Image } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import CustomHeader from "../../../components/CustomHeader";
 import CustomText from "../../../components/CustomText";
 import { Color, FontFamily } from "../../../theme";
 import CustomInput from "../../../components/CustomInput";
 import CustomButton from "../../../components/CustomButton";
+import PasswordConfirmation from "./molecules/PasswordConfirmation";
 
 const ChangePassword = ({ navigation }) => {
+  const [model, setModel] = useState(false);
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.insideContainer}>
@@ -62,8 +64,13 @@ const ChangePassword = ({ navigation }) => {
           color={Color.white}
           fontSize={16}
           marginBottom={10}
+          onPress={() => setModel(true)}
         />
         <CustomText label={"Version 1.0"} textAlign={"center"} />
+        <PasswordConfirmation
+          visible={model}
+          CancelPress={() => setModel(false)}
+        />
       </View>
     </SafeAreaView>
   );

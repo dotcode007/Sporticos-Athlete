@@ -28,6 +28,7 @@ export const images = {
   GPay: require("../assets/images/GooglePay.png"),
   ApplePay: require("../assets/images/ApplePay.png"),
   googleIcon: require("../assets/images/googleIcon.png"),
+  editMen: require("../assets/images/editMen.png"),
 };
 //icons
 export const icons = {
