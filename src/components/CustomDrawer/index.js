@@ -114,7 +114,7 @@ const CustomDrawer = (props) => {
         onPress={() =>
           props.navigation.reset({
             index: 0,
-            routes: [{ name: "onBoarding" }],
+            routes: [{ name: "AuthSelction" }],
           })
         }
       >

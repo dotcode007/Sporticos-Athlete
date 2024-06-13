@@ -4,7 +4,7 @@ import CustomHeader from "../../../components/CustomHeader";
 import CustomText from "../../../components/CustomText";
 import { Color, FontFamily } from "../../../theme";
 
-const PrivacyPolicy = () => {
+const PrivacyPolicy = ({navigation}) => {
   return (
     <SafeAreaView style={styles.parent}>
       <View style={styles.container}>
@@ -21,7 +21,10 @@ const PrivacyPolicy = () => {
           }
           rightIcon={<View />}
         />
-        <ScrollView>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          style={{ marginBottom: 60 }}
+        >
           <CustomText
             label={"Privacy Policy for Sporticos App"}
             fontSize={16}

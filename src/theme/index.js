@@ -30,6 +30,9 @@ export const images = {
   googleIcon: require("../assets/images/googleIcon.png"),
   editMen: require("../assets/images/editMen.png"),
   userModel: require("../assets/images/userModel.png"),
+  sliderImg: require("../assets/images/sliderImg.png"),
+
+  
 };
 //icons
 export const icons = {

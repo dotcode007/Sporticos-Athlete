@@ -28,9 +28,9 @@ const ProfilePhoto = ({ navigation }) => {
         <CustomText
           label={"Add a profile picture"}
           alignSelf={"center"}
-          fontSize={30}
+          fontSize={28}
           fontFamily={FontFamily.barlowBold}
-          marginTop={40}
+          marginTop={25}
           marginBottom={10}
         />
         <CustomText
@@ -65,7 +65,7 @@ const ProfilePhoto = ({ navigation }) => {
         <CustomInput
           placeholder={"Write a short bio"}
           HeaderLabel={"Career Goals"}
-          height={110}
+          height={90}
           multiline={true}
         />
         <CustomButton

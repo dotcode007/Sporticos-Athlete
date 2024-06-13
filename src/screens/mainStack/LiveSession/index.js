@@ -48,6 +48,7 @@ const LiveSession = ({ navigation }) => {
       <View style={styles.container}>
         <CustomHeader
           marginBottom={20}
+          onPress={()=>navigation.goBack()}
           headerTitle={
             <CustomText
               label={"Live Sessions"}

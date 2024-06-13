@@ -1,4 +1,3 @@
-// OnboardingSlider.js
 import React, { useState, useRef } from "react";
 import {
   View,
@@ -21,21 +20,21 @@ const slides = [
     id: "1",
     title: "Wherever You Are Health Is Number One",
     subtitle: "There is no instant way to a healthy life",
-    image: images.slide1,
+    image: images.sliderImg,
     buttonText: "Next",
   },
   {
     id: "2",
     title: "Wherever You Are Health Is Number One",
     subtitle: "There is no instant way to a healthy life",
-    image: images.slide2,
+    image: images.sliderImg,
     buttonText: "Next",
   },
   {
     id: "3",
     title: "Wherever You Are Health Is Number One",
     subtitle: "There is no instant way to a healthy life",
-    image: images.slide3,
+    image: images.sliderImg,
     buttonText: "Get Started",
   },
 ];
@@ -51,27 +50,22 @@ const Slide = ({ item }) => (
       ]}
       style={styles.overlay}
     >
-      <View
-        style={{
-          height: "80%",
-          justifyContent: "flex-end",
-        }}
-      >
+      <View style={{ height: "80%", justifyContent: "flex-end" }}>
         <CustomText
-          label={"Wherever You Are Health is Number One"}
+          label={item.title}
           fontFamily={FontFamily.barlowMedium}
           fontSize={24}
-          textAlign={"center"}
+          textAlign="center"
           color={Color.white}
-          alignSelf={"center"}
-          width={"80%"}
+          alignSelf="center"
+          width="80%"
         />
         <CustomText
           label={item.subtitle}
-          textAlign={"center"}
+          textAlign="center"
           color={Color.white}
-          alignSelf={"center"}
-          width={"80%"}
+          alignSelf="center"
+          width="80%"
           marginTop={20}
         />
       </View>
@@ -108,34 +102,31 @@ const OnboardingSlider = ({ navigation }) => {
         )}
       />
       <View style={styles.pagination}>
-        {slides.map((_, index) => {
-          return (
-            <View
-              key={index}
-              style={[
-                styles.dot,
-                {
-                  backgroundColor:
-                    index === activeSlide ? Color.yellowPrim : Color.black,
-                },
-              ]}
-            />
-          );
-        })}
+        {slides.map((_, index) => (
+          <View
+            key={index}
+            style={[
+              styles.dot,
+              {
+                backgroundColor:
+                  index === activeSlide ? Color.yellowPrim : Color.black,
+              },
+            ]}
+          />
+        ))}
       </View>
       <TouchableOpacity
         style={styles.button}
         onPress={() => {
-          if (activeSlide === 0 || activeSlide === 1) {
+          if (activeSlide < slides.length - 1) {
             setActiveSlide(activeSlide + 1);
-          }
-          if (activeSlide === 2) {
+          } else {
             navigation.navigate("AuthSelction");
           }
         }}
       >
         <Text style={styles.buttonText}>
-          {activeSlide === 2 ? "Get Started" : "Next"}
+          {activeSlide === slides.length - 1 ? "Get Started" : "Next"}
         </Text>
       </TouchableOpacity>
     </View>
@@ -211,8 +202,6 @@ const styles = StyleSheet.create({
     width: 20,
     height: 3,
     borderRadius: 5,
-    // backgroundColor: Color.yellowPrim,
-    // marginHorizontal: 5,
   },
 });
 

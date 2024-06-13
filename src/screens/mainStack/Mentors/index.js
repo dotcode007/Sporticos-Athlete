@@ -42,6 +42,7 @@ const Mentors = ({navigation}) => {
     <SafeAreaView style={styles.parent}>
       <View style={styles.container}>
         <CustomHeader
+          onPress={()=> navigation.goBack()}
           headerTitle={
             <CustomText
               label={"Mentors"}

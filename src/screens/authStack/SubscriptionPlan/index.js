@@ -31,9 +31,9 @@ const SubscriptionPlan = ({ navigation }) => {
         <CustomText
           label={"Subscription Plan"}
           alignSelf={"center"}
-          fontSize={30}
+          fontSize={28}
           fontFamily={FontFamily.barlowBold}
-          marginTop={40}
+          marginTop={30}
           marginBottom={10}
         />
         <CustomText
