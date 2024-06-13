@@ -203,7 +203,13 @@ const MentorProfile = ({ navigation }) => {
           <CustomButton
             title={activeStep === 4 ? "Complete" : "Next"}
             color={Color.white}
-            onPress={() => setActiveStep(activeStep + 1)}
+            onPress={() => {
+              if (activeStep === 4) {
+                navigation.navigate("Drawer");
+              } else {
+                setActiveStep(activeStep + 1);
+              }
+            }}
           />
         </View>
       </View>

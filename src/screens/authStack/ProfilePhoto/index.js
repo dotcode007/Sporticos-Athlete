@@ -13,9 +13,14 @@ import CustomHeader from "../../../components/CustomHeader";
 import CustomInput from "../../../components/CustomInput";
 import CustomButton from "../../../components/CustomButton";
 import UploadPhoto from "../../../components/UploadPhoto";
+import { useSelector } from "react-redux";
 
 const ProfilePhoto = ({ navigation }) => {
   const [imageModal, setImageModal] = useState(false);
+  const { userType } = useSelector((state) => state.user);
+  const isMentor = userType === "mentor";
+
+  console.log("isMentor", isMentor);
   return (
     <SafeAreaView style={styles.parent}>
       <View style={styles.container}>
@@ -67,7 +72,13 @@ const ProfilePhoto = ({ navigation }) => {
           marginTop={20}
           title={"Done"}
           color={Color?.white}
-          onPress={() => navigation.navigate("SubscriptionPlan")}
+          onPress={() => {
+            if (isMentor) {
+              navigation.navigate("MentorProfile");
+            } else {
+              navigation.navigate("SubscriptionPlan");
+            }
+          }}
         />
         <CustomText
           label={"Skip this step"}

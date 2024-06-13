@@ -28,7 +28,7 @@ const AuthStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{ headerShown: false }}
-      initialRouteName="MentorProfile"
+      initialRouteName="OnBoarding"
     >
       <Stack.Screen name="AuthSelction" component={AuthSelction} />
       <Stack.Screen name="MentorProfile" component={MentorProfile} />
