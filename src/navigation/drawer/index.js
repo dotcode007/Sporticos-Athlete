@@ -16,10 +16,13 @@ import Support from "../../screens/mainStack/Support";
 import EditProfile from "../../screens/mainStack/EditProfile";
 import TermCondtion from "../../screens/mainStack/TermCondtion";
 import PrivacyPolicy from "../../screens/mainStack/PrivacyPolicy";
+import { useSelector } from "react-redux";
 
 const Drawer = createDrawerNavigator();
 
 const DrawerNavigator = () => {
+  const { userType } = useSelector((state) => state.user);
+  const isMentor = userType === "mentor";
   return (
     <View style={{ flex: 1, backgroundColor: "red" }}>
       <Drawer.Navigator
@@ -34,14 +37,14 @@ const DrawerNavigator = () => {
           drawerItemStyle: {
             borderRadius: 10,
           },
-          drawerActiveTintColor: Color.primary,
+          drawerActiveTintColor: Color.red,
           drawerStyle: {
             width: "55%",
-            backgroundColor: Color.primary,
+            backgroundColor: isMentor ? Color.yellowPrim : Color.primary,
             // width: 300,
           },
           sceneContainerStyle: {
-            backgroundColor: Color.primary,
+            backgroundColor: isMentor ? Color.yellowPrim : Color.primary,
           },
         }}
       >
@@ -52,13 +55,16 @@ const DrawerNavigator = () => {
             </DrawerSceneWrapper>
           )}
         </Drawer.Screen>
-        <Drawer.Screen name="SubscriptionScreen">
-          {(props) => (
-            <DrawerSceneWrapper>
-              <SubscriptionPlan {...props} />
-            </DrawerSceneWrapper>
-          )}
-        </Drawer.Screen>
+        {!isMentor && (
+          <Drawer.Screen name="SubscriptionScreen">
+            {(props) => (
+              <DrawerSceneWrapper>
+                <SubscriptionPlan {...props} />
+              </DrawerSceneWrapper>
+            )}
+          </Drawer.Screen>
+        )}
+
         <Drawer.Screen name="EditProfile">
           {(props) => (
             <DrawerSceneWrapper>
