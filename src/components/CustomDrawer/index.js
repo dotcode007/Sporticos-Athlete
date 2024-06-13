@@ -1,17 +1,21 @@
 import React from "react";
 import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { DrawerContentScrollView, DrawerItem } from "@react-navigation/drawer";
-
 import { useIsFocused } from "@react-navigation/native";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import { Color, FontFamily, icons, images } from "../../theme";
 import CustomText from "../CustomText";
+import { useSelector } from "react-redux";
 
 const CustomDrawer = (props) => {
   const isFocused = useIsFocused();
+  const { userType } = useSelector((state) => state.user);
+  const isMentor = userType === "mentor";
 
   const drawerData = [
-    { name: "Subscription", icon: icons.dollar, screen: "SubscriptionScreen" },
+    ...(!isMentor
+      ? [{ name: "Subscription", icon: icons.dollar, screen: "SubscriptionScreen" }]
+      : []),
     { name: "My Account", icon: icons.myAccount, screen: "EditProfile" },
     { name: "Support", icon: icons.support, screen: "Support" },
     { name: "Terms of Use", icon: icons.terms, screen: "TermCondtion" },
@@ -27,7 +31,11 @@ const CustomDrawer = (props) => {
     <>
       <DrawerContentScrollView {...props}>
         <TouchableOpacity style={styles.crossContainer} onPress={closeDrawer}>
-          <Image source={icons.cross} style={styles.iconsStyle} />
+          <Image
+            source={icons.cross}
+            style={styles.iconsStyle}
+            tintColor={isMentor ? Color.primary : Color.yellowPrim}
+          />
         </TouchableOpacity>
         <View style={styles.header}>
           <Image source={images.slide1} style={styles.profileImage} />
@@ -36,14 +44,14 @@ const CustomDrawer = (props) => {
               label={"John Welles"}
               fontSize={20}
               marginTop={10}
-              color={Color.white}
+              color={isMentor ? Color.primary : Color.white}
               fontFamily={FontFamily.barlowMedium}
             />
             <CustomText
               label={"Tactical Tie"}
               fontSize={14}
               marginTop={10}
-              color={Color.yellowPrim}
+              color={isMentor ? Color.primary : Color.yellowPrim}
               textAlign={"center"}
               fontFamily={FontFamily.barlowMedium}
             />
@@ -57,13 +65,24 @@ const CustomDrawer = (props) => {
               key={index}
               focused={focused}
               style={{
-                backgroundColor: focused ? Color.yellowPrim : "transparent",
+                backgroundColor:
+                  focused && !isMentor
+                    ? Color.yellowPrim
+                    : focused && isMentor
+                    ? Color.primary
+                    : "transparent",
               }}
               label={() => (
                 <CustomText
                   label={item.name}
                   fontSize={15}
-                  color={focused ? Color.black : Color.iconColor}
+                  color={
+                    focused && !isMentor
+                      ? Color.black
+                      : focused && isMentor
+                      ? Color.yellowPrim
+                      : Color.iconColor
+                  }
                   fontFamily={FontFamily.barlowMedium}
                 />
               )}
@@ -73,7 +92,12 @@ const CustomDrawer = (props) => {
                   style={[
                     styles.iconsStyle,
                     {
-                      tintColor: focused ? Color.black : Color.iconColor,
+                      tintColor:
+                        focused && !isMentor
+                          ? Color.black
+                          : focused && isMentor
+                          ? Color.yellowPrim
+                          : Color.iconColor,
                     },
                   ]}
                 />
@@ -94,9 +118,13 @@ const CustomDrawer = (props) => {
           })
         }
       >
-        <MaterialIcons name="logout" size={24} color={Color.yellowPrim} />
+        <MaterialIcons
+          name="logout"
+          size={24}
+          color={isMentor ? Color.primary : Color.yellowPrim}
+        />
         <CustomText
-          color={Color.yellowPrim}
+          color={isMentor ? Color.primary : Color.yellowPrim}
           fontSize={15}
           fontFamily={FontFamily.barlowMedium}
           label={"Sign Out"}
