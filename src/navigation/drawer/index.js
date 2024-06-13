@@ -15,6 +15,7 @@ import ChangePassword from "../../screens/mainStack/ChangePassword";
 import Support from "../../screens/mainStack/Support";
 import EditProfile from "../../screens/mainStack/EditProfile";
 import TermCondtion from "../../screens/mainStack/TermCondtion";
+import PrivacyPolicy from "../../screens/mainStack/PrivacyPolicy";
 
 const Drawer = createDrawerNavigator();
 
@@ -72,6 +73,7 @@ const DrawerNavigator = () => {
             </DrawerSceneWrapper>
           )}
         </Drawer.Screen>
+
         <Drawer.Screen name="SettingsScreen">
           {(props) => (
             <DrawerSceneWrapper>
@@ -83,6 +85,13 @@ const DrawerNavigator = () => {
           {(props) => (
             <DrawerSceneWrapper>
               <TermCondtion {...props} />
+            </DrawerSceneWrapper>
+          )}
+        </Drawer.Screen>
+        <Drawer.Screen name="PrivacyPolicy">
+          {(props) => (
+            <DrawerSceneWrapper>
+              <PrivacyPolicy {...props} />
             </DrawerSceneWrapper>
           )}
         </Drawer.Screen>

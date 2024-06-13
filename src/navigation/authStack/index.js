@@ -20,6 +20,7 @@ import SessionDetails from "../../screens/mainStack/SessionDetails";
 import Mentors from "../../screens/mainStack/Mentors";
 import MentorDetails from "../../screens/mainStack/MentorDetails";
 import EditProfile from "../../screens/mainStack/EditProfile";
+import MentorProfile from "../../screens/authStack/MentorProfile";
 
 const Stack = createNativeStackNavigator();
 
@@ -27,9 +28,10 @@ const AuthStack = () => {
   return (
     <Stack.Navigator
       screenOptions={{ headerShown: false }}
-      initialRouteName="OnBoarding"
+      initialRouteName="MentorProfile"
     >
       <Stack.Screen name="AuthSelction" component={AuthSelction} />
+      <Stack.Screen name="MentorProfile" component={MentorProfile} />
 
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="OnBoarding" component={Onboarding} />

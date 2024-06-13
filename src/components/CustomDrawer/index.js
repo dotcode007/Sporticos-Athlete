@@ -15,7 +15,7 @@ const CustomDrawer = (props) => {
     { name: "My Account", icon: icons.myAccount, screen: "EditProfile" },
     { name: "Support", icon: icons.support, screen: "Support" },
     { name: "Terms of Use", icon: icons.terms, screen: "TermCondtion" },
-    { name: "Privacy Policy", icon: icons.privacy, screen: "PrivacyScreen" },
+    { name: "Privacy Policy", icon: icons.privacy, screen: "PrivacyPolicy" },
     { name: "App Settings", icon: icons.setting, screen: "SettingsScreen" },
   ];
 

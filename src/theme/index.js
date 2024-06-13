@@ -29,6 +29,7 @@ export const images = {
   ApplePay: require("../assets/images/ApplePay.png"),
   googleIcon: require("../assets/images/googleIcon.png"),
   editMen: require("../assets/images/editMen.png"),
+  userModel: require("../assets/images/userModel.png"),
 };
 //icons
 export const icons = {
@@ -81,12 +82,14 @@ export const Color = {
   greyLight20: "#ACACAC",
   greyLight30: "#677294",
   greyLight40: "#8792A2",
+  greyLight50: "#BABABA",
 
   darkGrey: "#303841",
   Grey10: "#6B7280",
   grey20: "#8EA0AB",
   grey30: "#919EAB",
   grey40: "#B9B9B9",
+  grey50: "#1F1F1FA6",
   borderColor: "#CFE1ED",
   messageBodyColor: "#F3F7F9",
   red: "#F07167",

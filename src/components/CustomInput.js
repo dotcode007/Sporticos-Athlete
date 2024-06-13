@@ -44,6 +44,8 @@ const CustomInput = ({
   marginBottom,
   HeaderLabelBottom,
   verticalAlign,
+  HeaderLabelSize,
+  HeaderLabelColor,
 }) => {
   const [hidePass, setHidePass] = useState(secureTextEntry);
   return (
@@ -51,8 +53,9 @@ const CustomInput = ({
       <CustomText
         label={HeaderLabel}
         marginBottom={HeaderLabelBottom || 5}
-        fontSize={16}
+        fontSize={HeaderLabelSize || 16}
         fontFamily={FontFamily.barlowMedium}
+        color={HeaderLabelColor}
       />
       <View
         style={[
